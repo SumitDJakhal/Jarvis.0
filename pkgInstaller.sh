@@ -30,7 +30,7 @@ get_user_home() {
 
 ACTION=$1    # Expected action: "install", "uninstall", "check", "set_java_home"
 PACKAGE=$2   # Expected package: "git", "jdk", "vscode", etc.
-JDK_VERSION=$3 # Optional: for JDK installations/uninstallations (e.g., "11", "17")
+JDK_VERSION=$3 # Optional: for JDK installations/uninstallation's (e.g., "11", "17")
 CLEAR_METADATA=$4 # Optional: "yes" or "no" for uninstall
 
 echo "Starting package manager script with action: $ACTION, package: $PACKAGE"
@@ -52,7 +52,7 @@ install_package() {
     local package_name=$1
     echo "Installing $package_name..."
     speak_text "Installing $package_name."
-    update_and_upgrade || return 1 # Update before installing
+    update_and_upgrade || return 1
     sudo apt install -y "$package_name" || { echo "Error: Failed to install $package_name."; speak_text "Failed to install $package_name."; return 1; }
     echo "$package_name installed successfully."
     speak_text "$package_name installed successfully."
@@ -290,36 +290,48 @@ case "$ACTION" in
             "vscode")
                 echo "Installing VS Code..."
                 speak_text "Installing V S Code."
-                # Add VS Code installation steps here (e.g., download .deb, dpkg -i)
-                # For simplicity, using generic apt install if available:
-                install_package code || return 1 # Assuming 'code' package name for VS Code
+                install_package code || exit 1
                 ;;
             "android_studio")
                 echo "Installing Android Studio..."
                 speak_text "Installing Android Studio."
-                # Android Studio often requires manual download and extraction
-                # For basic apt install, check if it's in a repo:
-                install_package android-studio || return 1
+                # Android Studio is typically installed via Snap on Ubuntu.
+                if ! command -v snap &> /dev/null; then
+                    echo "Snap (snapd) is not found. Attempting to install snapd first..."
+                    speak_text "Snap D is not found. Attempting to install snap D first."
+                    sudo apt update && sudo apt install -y snapd || {
+                        echo "Error: Failed to install snapd. Please install it manually."
+                        speak_text "Failed to install snap D. Please install it manually."
+                        exit 1
+                    }
+                    echo "snapd installed successfully."
+                    speak_text "Snap D installed successfully."
+                fi
+                echo "Running snap install android-studio --classic..."
+                speak_text "Running snap install android studio."
+                sudo snap install android-studio --classic || { echo "Error: Failed to install Android Studio via snap."; speak_text "Failed to install Android Studio."; exit 1; }
+                echo "Android Studio installed successfully via Snap."
+                speak_text "Android Studio installed successfully."
                 ;;
             "neovim")
                 echo "Installing Neovim..."
                 speak_text "Installing Neovim."
-                install_package neovim || return 1
+                install_package neovim || exit 1
                 ;;
             "neofetch")
                 echo "Installing Neofetch..."
                 speak_text "Installing Neofetch."
-                install_package neofetch || return 1
+                install_package neofetch || exit 1
                 ;;
             "snap")
                 echo "Installing Snapd..."
-                speak_text "Installing Snapd."
-                install_package snapd || return 1
+                speak_text "Installing Snapd." # Kept this voice command
+                install_package snapd || exit 1
                 ;;
             "wireshark")
                 echo "Installing Wireshark..."
                 speak_text "Installing Wireshark."
-                install_package wireshark || return 1
+                install_package wireshark || exit 1
                 sudo usermod -aG wireshark "$SUDO_USER" || true # Add user to wireshark group
                 echo "Please log out and log back in for Wireshark group changes to take effect."
                 speak_text "Please log out and log back in for Wireshark group changes to take effect."
@@ -332,7 +344,7 @@ case "$ACTION" in
                 # For a basic placeholder:
                 echo "Kafka installation is complex and typically involves manual steps. Please refer to official documentation."
                 speak_text "Kafka installation is complex and typically involves manual steps."
-                return 1
+                exit 1
                 ;;
             *)\
                 echo "Error: Unknown package for installation: $PACKAGE."
@@ -353,32 +365,42 @@ case "$ACTION" in
             "vscode")
                 echo "Uninstalling VS Code..."
                 speak_text "Uninstalling V S Code."
-                uninstall_package code || return 1
+                uninstall_package code || exit 1
                 ;;
             "android_studio")
                 echo "Uninstalling Android Studio..."
                 speak_text "Uninstalling Android Studio."
-                uninstall_package android-studio || return 1
+                # For snap packages, uninstallation is usually snap remove
+                if ! command -v snap &> /dev/null; then
+                    echo "Snap is not installed, cannot remove Android Studio via snap."
+                    speak_text "Snap is not installed. Cannot remove Android Studio."
+                    exit 1
+                fi
+                echo "Running snap remove android-studio..."
+                speak_text "Running snap remove android studio."
+                sudo snap remove android-studio || { echo "Error: Failed to remove Android Studio via snap."; speak_text "Failed to remove Android Studio."; exit 1; }
+                echo "Android Studio uninstalled successfully via Snap."
+                speak_text "Android Studio uninstalled successfully."
                 ;;
             "neovim")
                 echo "Uninstalling Neovim..."
                 speak_text "Uninstalling Neovim."
-                uninstall_package neovim || return 1
+                uninstall_package neovim || exit 1
                 ;;
             "neofetch")
                 echo "Uninstalling Neofetch..."
                 speak_text "Uninstalling Neofetch."
-                uninstall_package neofetch || return 1
+                uninstall_package neofetch || exit 1
                 ;;
             "snap")
                 echo "Uninstalling Snapd..."
-                speak_text "Uninstalling Snapd."
-                uninstall_package snapd || return 1
+                # speak_text "Uninstalling Snapd." # Removed this specific voice command
+                uninstall_package snapd || exit 1
                 ;;
             "wireshark")
                 echo "Uninstalling Wireshark..."
                 speak_text "Uninstalling Wireshark."
-                uninstall_package wireshark || return 1
+                uninstall_package wireshark || exit 1
                 sudo deluser "$SUDO_USER" wireshark || true # Remove user from wireshark group
                 ;;
             "kafka")
@@ -386,7 +408,7 @@ case "$ACTION" in
                 speak_text "Uninstalling Kafka."
                 echo "Kafka uninstallation is complex and typically involves manual steps."
                 speak_text "Kafka uninstallation is complex and typically involves manual steps."
-                return 1
+                exit 1
                 ;;
             *)\
                 echo "Error: Unknown package for uninstallation: $PACKAGE."
@@ -410,14 +432,11 @@ case "$ACTION" in
                 speak_text "Checking if J D K version $version is installed."
 
                 if sudo -u "$SUDO_USER" [ -d "$expected_path" ]; then
-                    echo "JDK $version files found at $expected_path."
-                    # Also check if JAVA_HOME is set to this path in current session (less reliable for external check)
-                    # For a full check, we might need to parse .bashrc, which is more complex.
-                    # For now, file presence is a good indicator.
+                    echo "JDK $version files found at "$expected_path"."
                     speak_text "J D K version $version files found."
                     return 0
                 else
-                    echo "JDK $version files NOT found at $expected_path."
+                    echo "JDK $version files NOT found at "$expected_path"."
                     speak_text "J D K version $version files not found."
                     return 1
                 fi
@@ -427,7 +446,16 @@ case "$ACTION" in
                 check_package_exists code # Assuming 'code' package name for VS Code
                 ;;
             "android_studio")
-                check_package_exists android-studio
+                # Check for snap installation
+                if snap list android-studio &> /dev/null; then
+                    echo "Android Studio (snap) is installed."
+                    speak_text "Android Studio is installed."
+                    return 0
+                else
+                    echo "Android Studio (snap) is NOT installed."
+                    speak_text "Android Studio is not installed."
+                    return 1
+                fi
                 ;;
             "neovim")
                 check_package_exists neovim

@@ -1,13 +1,12 @@
 beautifulsoup4==4.12.3
 blinker==1.8.2
-bottle @ git+https://github.com/bottlepy/bottle.git@3fdb8b2a2e0d1641374b53ef2b051fe7f54508b4
+bottle
 bottle-websocket==0.2.9
 certifi==2024.7.4
 cffi==1.16.0
 charset-normalizer==3.3.2
 click==8.1.7
 colorama==0.4.6
-comtypes==1.4.4
 Eel==0.16.0
 enum34==1.1.10
 Flask==3.0.3
@@ -15,7 +14,7 @@ future==1.0.0
 gevent==24.2.1
 gevent-websocket==0.10.1
 greenlet==3.0.3
-gTTS==2.5.0 # Added gTTS (common latest at the moment)
+gTTS==2.5.0
 hugchat==0.4.8
 idna==3.7
 itsdangerous==2.2.0
@@ -35,14 +34,12 @@ PyGetWindow==0.0.9
 PyMsgBox==1.0.9
 pyparsing==3.1.2
 pyperclip==1.9.0
-pypiwin32==223
 PyRect==0.2.0
 PyScreeze==0.1.30
 pyttsx3==2.90
 pytweening==1.2.0
 pywhatkit==5.4
-pywin32==306
-python-dotenv==1.0.1 # Added python-dotenv (common latest at the moment)
+python-dotenv==1.0.1
 requests==2.32.3
 requests-toolbelt==1.0.0
 setuptools==70.2.0

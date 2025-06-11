@@ -145,3 +145,213 @@
 2025-05-27 10:44:56,358 - shree - INFO - Could not understand audio
 2025-05-27 10:44:56,358 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
 2025-05-27 10:45:10,927 - shree - INFO - Speaking: Goodbye!
+2025-06-11 21:35:00,144 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 21:35:14,612 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 21:35:26,897 - shree - INFO - Speaking: Installing Android Studio now.
+2025-06-11 21:35:30,586 - shree - INFO - Speaking: This will download a large file and may take a while.
+2025-06-11 21:35:35,408 - shree - ERROR - pkgInstaller.sh not found at None. Check .env file and script location.
+2025-06-11 21:35:35,408 - shree - INFO - Speaking: The script, pkgInstaller.sh, was not found. Please ensure it is in the correct location and the .env file is configured.
+2025-06-11 21:35:56,073 - shree - INFO - Could not understand audio
+2025-06-11 21:35:56,073 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
+2025-06-11 21:36:01,111 - shree - INFO - Speaking: Goodbye!
+2025-06-11 21:40:29,774 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 21:40:44,029 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 21:40:56,230 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 21:41:09,935 - shree - INFO - Speaking: Installing Android Studio now.
+2025-06-11 21:41:13,428 - shree - INFO - Speaking: This will download a large file and may take a while.
+2025-06-11 21:41:17,908 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 21:41:17,909 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install android_studio
+2025-06-11 21:41:22,465 - shree - ERROR - Error executing pkgInstaller.sh: Command 'sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install android_studio' returned non-zero exit status 2.
+2025-06-11 21:41:22,466 - shree - INFO - Speaking: There was an error running pkgInstaller.sh. The command 'sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install android_studio' failed. Please check the logs for details.
+2025-06-11 21:41:53,039 - shree - INFO - Speaking: Goodbye!
+2025-06-11 21:44:02,002 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 21:44:15,695 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 21:44:34,638 - shree - INFO - Speaking: Installing Android Studio now.
+2025-06-11 21:44:38,059 - shree - INFO - Speaking: This will download a large file and may take a while.
+2025-06-11 21:44:42,497 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 21:44:42,499 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install android_studio
+2025-06-11 22:00:39,655 - shree - INFO - Speaking: Android Studio installation process completed. Remember to log out and log back in for KVM group changes to take effect.
+2025-06-11 22:00:57,234 - shree - INFO - Could not understand audio
+2025-06-11 22:00:57,234 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
+2025-06-11 22:01:33,164 - shree - INFO - Speaking: Goodbye!
+2025-06-11 22:01:37,069 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 22:01:49,207 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 22:02:02,931 - shree - INFO - Speaking: Uninstalling Android Studio now.
+2025-06-11 22:02:06,656 - shree - INFO - Speaking: Would you like to clear all associated configuration files and metadata? Say yes or no.
+2025-06-11 22:02:18,701 - shree - INFO - Could not understand audio
+2025-06-11 22:02:18,701 - shree - INFO - Speaking: I didn't understand. Please say 'yes' or 'no'.
+2025-06-11 22:02:27,388 - shree - INFO - Could not understand audio
+2025-06-11 22:02:27,388 - shree - INFO - Speaking: I didn't understand. Please say 'yes' or 'no'.
+2025-06-11 22:02:37,749 - shree - INFO - Could not understand audio
+2025-06-11 22:02:37,749 - shree - INFO - Speaking: I didn't understand. Please say 'yes' or 'no'.
+2025-06-11 22:02:43,262 - shree - INFO - Speaking: I'm still having trouble understanding your confirmation. Please type 'yes' or 'no'.
+2025-06-11 22:03:06,205 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 22:03:06,206 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh uninstall android_studio no
+2025-06-11 22:03:23,460 - shree - INFO - Speaking: Android Studio has been uninstalled successfully.
+2025-06-11 22:03:37,345 - shree - INFO - Could not understand audio
+2025-06-11 22:03:37,345 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
+2025-06-11 22:04:02,641 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 22:04:11,855 - shree - INFO - Speaking: Installing Git now.
+2025-06-11 22:04:14,878 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 22:04:14,880 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-11 22:04:34,535 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-11 22:04:45,955 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 22:05:05,104 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/git_utils.sh
+2025-06-11 22:05:05,106 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/git_utils.sh display_ssh
+2025-06-11 22:05:17,598 - shree - INFO - Could not understand audio
+2025-06-11 22:05:17,598 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
+2025-06-11 22:05:40,581 - shree - INFO - Speaking: Goodbye!
+2025-06-11 22:37:37,605 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 22:37:57,826 - shree - INFO - Speaking: Installing Android Studio now.
+2025-06-11 22:38:01,196 - shree - INFO - Speaking: This will download a large file and may take a while.
+2025-06-11 22:38:06,016 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 22:38:06,018 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install android_studio
+2025-06-11 22:38:20,648 - shree - INFO - Speaking: Goodbye!
+2025-06-11 22:56:42,609 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 22:56:56,525 - shree - INFO - Speaking: Installing Git now.
+2025-06-11 22:57:00,056 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 22:57:00,058 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-11 22:57:05,032 - shree - ERROR - Error executing pkgInstaller.sh: Command 'sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git' returned non-zero exit status 2.
+2025-06-11 22:57:05,032 - shree - INFO - Speaking: There was an error running pkgInstaller.sh. The command 'sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git' failed. Please check the logs for details.
+2025-06-11 22:57:29,596 - shree - INFO - Could not understand audio
+2025-06-11 22:57:29,597 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
+2025-06-11 22:57:32,663 - shree - INFO - Speaking: Goodbye!
+2025-06-11 22:57:36,694 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 22:57:47,368 - shree - INFO - Speaking: Goodbye!
+2025-06-11 22:58:23,258 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 22:58:37,286 - shree - INFO - Speaking: Installing Git now.
+2025-06-11 22:58:40,434 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 22:58:40,436 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-11 22:59:06,152 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-11 22:59:12,792 - shree - INFO - Could not understand audio
+2025-06-11 22:59:12,792 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
+2025-06-11 22:59:14,381 - shree - INFO - Speaking: Goodbye!
+2025-06-11 23:08:59,254 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 23:09:22,009 - shree - INFO - Processing command: install git
+2025-06-11 23:09:22,009 - shree - INFO - Speaking: Installing Git now.
+2025-06-11 23:09:25,133 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 23:09:25,134 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-11 23:09:49,181 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-11 23:09:53,110 - shree - INFO - Worker task finished.
+2025-06-11 23:10:13,478 - shree - INFO - Processing command: intall wireshark
+2025-06-11 23:10:13,479 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 23:10:18,417 - shree - INFO - Worker task finished.
+2025-06-11 23:10:35,786 - shree - INFO - Processing command: install wireshark
+2025-06-11 23:10:35,786 - shree - INFO - Speaking: Installing Wireshark now.
+2025-06-11 23:10:38,962 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 23:10:38,964 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install wireshark
+2025-06-11 23:11:35,297 - shree - INFO - Speaking: Wireshark has been installed successfully.
+2025-06-11 23:11:39,297 - shree - INFO - Speaking: Remember to log out and log back in for group changes to take effect and to capture packets without sudo.
+2025-06-11 23:11:48,428 - shree - INFO - Worker task finished.
+2025-06-11 23:12:00,446 - shree - INFO - Processing command: uninstall wire shark
+2025-06-11 23:12:00,446 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 23:12:05,358 - shree - INFO - Worker task finished.
+2025-06-11 23:12:27,682 - shree - INFO - Processing command: uninstall whatsapp
+2025-06-11 23:12:27,682 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 23:12:32,513 - shree - INFO - Worker task finished.
+2025-06-11 23:12:42,738 - shree - INFO - Processing command: uninstall by stark
+2025-06-11 23:12:42,738 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 23:12:47,928 - shree - INFO - Worker task finished.
+2025-06-11 23:12:59,806 - shree - INFO - Processing command: uninstall wiresharks
+2025-06-11 23:12:59,806 - shree - INFO - Speaking: Uninstalling Wireshark now.
+2025-06-11 23:13:02,983 - shree - INFO - Speaking: Would you like to clear all associated configuration files and metadata? Say yes or no.
+2025-06-11 23:13:17,818 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 23:13:17,847 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh uninstall wireshark yes
+2025-06-11 23:19:49,611 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 23:20:18,109 - shree - INFO - Processing command: install whatsapp
+2025-06-11 23:20:18,110 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 23:20:23,410 - shree - INFO - Worker task finished.
+2025-06-11 23:20:30,276 - shree - INFO - Processing command: install wireshark
+2025-06-11 23:20:30,276 - shree - INFO - Speaking: Installing Wireshark now.
+2025-06-11 23:20:33,527 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 23:20:33,529 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install wireshark
+2025-06-11 23:21:01,224 - shree - INFO - Speaking: Wireshark has been installed successfully.
+2025-06-11 23:21:05,184 - shree - INFO - Speaking: Remember to log out and log back in for group changes to take effect and to capture packets without sudo.
+2025-06-11 23:21:14,699 - shree - INFO - Worker task finished.
+2025-06-11 23:21:24,668 - shree - INFO - Processing command: uninstall wireshark
+2025-06-11 23:21:24,669 - shree - INFO - Speaking: Uninstalling Wireshark now.
+2025-06-11 23:21:27,833 - shree - INFO - Awaiting user confirmation to keep metadata (yes/no).
+2025-06-11 23:35:51,034 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 23:36:19,965 - shree - INFO - Processing command: uninstall whatsapp
+2025-06-11 23:36:19,965 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 23:36:24,967 - shree - INFO - Worker task finished.
+2025-06-11 23:36:42,206 - shree - INFO - Processing command: uninstall wireshark
+2025-06-11 23:36:42,206 - shree - INFO - Speaking: Uninstalling Wireshark now.
+2025-06-11 23:36:45,250 - shree - INFO - Requesting UI confirmation for metadata clearance.
+2025-06-11 23:36:45,250 - shree - INFO - Showing confirmation dialog: Would you like to KEEP associated configuration files and metadata for this application?
+
+Click 'Yes' to keep metadata.
+Click 'No' to remove metadata.
+2025-06-11 23:36:50,164 - shree - INFO - User chose: No (for keeping metadata). Emitting result: yes
+2025-06-11 23:42:40,187 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 23:42:57,071 - shree - INFO - Processing command: uninstall wireshark
+2025-06-11 23:42:57,071 - shree - INFO - Speaking: Uninstalling Wireshark now.
+2025-06-11 23:43:00,452 - shree - INFO - Requesting UI confirmation for metadata clearance.
+2025-06-11 23:43:00,452 - shree - INFO - Showing confirmation dialog: Would you like to KEEP associated configuration files and metadata for this application?
+
+Click 'Yes' to keep metadata.
+Click 'No' to remove metadata.
+2025-06-11 23:43:05,049 - shree - INFO - User chose: No (for keeping metadata). Emitting result: yes
+2025-06-11 23:44:52,694 - shree - INFO - Processing command: call mishra mobile shop
+2025-06-11 23:44:52,694 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 23:44:57,931 - shree - INFO - Worker task finished.
+2025-06-11 23:45:42,078 - shree - INFO - Processing command: uninstall whatsapp
+2025-06-11 23:45:42,078 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-11 23:45:47,359 - shree - INFO - Worker task finished.
+2025-06-11 23:45:51,740 - shree - INFO - UI confirmation result: yes
+2025-06-11 23:45:51,740 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 23:45:51,742 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh uninstall wireshark yes
+2025-06-11 23:46:19,305 - shree - INFO - Speaking: Wireshark has been uninstalled successfully, and its associated metadata was removed.
+2025-06-11 23:46:27,374 - shree - INFO - Worker task finished.
+2025-06-11 23:46:31,211 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-11 23:46:53,514 - shree - INFO - Processing command: install wireshark
+2025-06-11 23:46:53,515 - shree - INFO - Speaking: Installing Wireshark now.
+2025-06-11 23:46:56,465 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-11 23:46:56,466 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install wireshark
+2025-06-11 23:48:07,282 - shree - INFO - Speaking: Wireshark has been installed successfully.
+2025-06-11 23:48:11,628 - shree - INFO - Speaking: Remember to log out and log back in for group changes to take effect and to capture packets without sudo.
+2025-06-12 01:05:28,245 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 01:05:49,815 - shree - INFO - Processing command: install git
+2025-06-12 01:05:49,816 - shree - INFO - Speaking: Installing Git now.
+2025-06-12 01:05:52,964 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 01:05:52,966 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-12 01:12:32,018 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 01:12:55,556 - shree - INFO - Processing command: install git
+2025-06-12 01:12:55,557 - shree - INFO - Speaking: Installing Git now.
+2025-06-12 01:12:58,857 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 01:12:58,858 - shree - INFO - Showing password dialog: Please enter your root password for this operation:
+2025-06-12 01:20:54,048 - shree - INFO - Worker task finished.
+2025-06-12 01:21:05,215 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 01:21:28,773 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 01:21:44,028 - shree - INFO - Processing command: install git
+2025-06-12 01:21:44,029 - shree - INFO - Speaking: Installing Git now.
+2025-06-12 01:21:47,155 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 01:21:47,156 - shree - INFO - Showing password dialog: Please enter your root password for this operation:
+2025-06-12 01:25:29,848 - shree - INFO - Worker task finished.
+2025-06-12 01:28:47,793 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 01:29:15,724 - shree - INFO - Processing command: install gip
+2025-06-12 01:29:15,725 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-12 01:29:20,830 - shree - INFO - Worker task finished.
+2025-06-12 01:29:32,624 - shree - INFO - Processing command: install git
+2025-06-12 01:29:32,626 - shree - INFO - Speaking: Installing Git now.
+2025-06-12 01:29:37,963 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 01:29:50,626 - shree - INFO - Processing command: install git
+2025-06-12 01:29:50,627 - shree - INFO - Speaking: Installing Git now.
+2025-06-12 01:29:54,482 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 01:29:54,483 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-12 01:30:28,871 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-12 01:30:33,106 - shree - INFO - Worker task finished.
+2025-06-12 01:39:08,998 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 01:39:27,611 - shree - INFO - Processing command: install git
+2025-06-12 01:39:27,612 - shree - INFO - Speaking: Installing Git now.
+2025-06-12 01:39:30,495 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 01:39:30,497 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-12 01:39:49,512 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-12 01:39:53,258 - shree - INFO - Worker task finished.
+2025-06-12 02:25:10,173 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 02:25:32,443 - shree - INFO - Could not understand audio
+2025-06-12 02:25:32,445 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 02:25:36,230 - shree - INFO - Worker task finished.
+2025-06-12 02:25:48,417 - shree - INFO - Processing command: help
+2025-06-12 02:25:48,418 - shree - INFO - Speaking: Here are the commands I can help you with:
+2025-06-12 02:26:12,790 - shree - INFO - Worker task finished.
