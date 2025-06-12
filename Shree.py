@@ -9,17 +9,20 @@ from gtts import gTTS  # Google Text-to-Speech
 from dotenv import load_dotenv  # For secure env variables
 import time # Import time for delays
 import select # For non-blocking read on subprocess pipes
+import webbrowser # Added for opening websites
+import datetime # Added for timestamps in history
+from urllib.parse import quote_plus # Added for URL encoding search queries
 
 # PyQt5 Imports for UI
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
     QLineEdit, QTextEdit, QLabel, QFrame, QMessageBox, QDialog,
-    QScrollArea # Added QScrollArea for HelpDialog
+    QScrollArea
 )
 from PyQt5.QtCore import Qt, QThread, pyqtSignal, QObject, QEventLoop
 from PyQt5.QtGui import QColor, QPalette, QIcon, QFont
 
-# Set up logging
+# Set up main application logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -30,15 +33,24 @@ logging.basicConfig(
 )
 logger = logging.getLogger("shree")
 
+# Set up a separate logger for command history
+history_logger = logging.getLogger("command_history")
+history_logger.setLevel(logging.INFO)
+# Clear existing handlers to prevent duplicate logging
+if history_logger.handlers:
+    for handler in history_logger.handlers:
+        history_logger.removeHandler(handler)
+history_handler = logging.FileHandler("command_history.log")
+history_formatter = logging.Formatter('%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+history_handler.setFormatter(history_formatter)
+history_logger.addHandler(history_handler)
+history_logger.propagate = False # Prevent history logs from going to the main logger
+
 # Load environment variables from .env file
 load_dotenv()
 
 # --- Global Signal Handler (for communication from worker threads and global functions to UI) ---
-# This class will hold the signal that global functions (like speak, execute_shell_script)
-# and worker threads can use to send messages back to the main UI thread's conversation log.
 class GlobalSignaller(QObject):
-    # This signal will be used by background tasks (like speech recognition, shell scripts)
-    # to send text messages back to the main UI thread's conversation log.
     ui_update_signal = pyqtSignal(str, str) # (sender, message)
     show_help_signal = pyqtSignal() # New signal to request showing the help dialog
 
@@ -47,12 +59,8 @@ global_signals = GlobalSignaller()
 
 # --- Global Signal for Blocking UI Confirmation (e.g., metadata clear) ---
 class BlockingConfirmationSignaller(QObject):
-    # Signal emitted by worker thread to request a dialog from the main UI thread
     request_blocking_dialog = pyqtSignal(str) # Argument: Message to display in dialog
-
-    # Signal emitted by the main UI thread when user responds to the dialog
-    # Argument: result_string ("yes" to clear metadata, "no" to keep metadata)
-    dialog_response = pyqtSignal(str)
+    dialog_response = pyqtSignal(str) # Argument: result_string ("yes" to clear metadata, "no" to keep metadata)
 
 global_confirmation_signals = BlockingConfirmationSignaller()
 
@@ -302,6 +310,18 @@ def execute_shell_script(script_name, *args):
         logger.error(f"An unexpected error occurred during {script_name} execution: {e}")
         global_signals.ui_update_signal.emit("Shree", f"An unexpected error occurred while running {script_name}. Please check the logs.")
         return False
+
+# --- New Website Handling Functions ---
+def _open_website(url, website_name):
+    """Opens a website in the default system browser in a new tab and updates UI."""
+    logger.info(f"Attempting to open {website_name} at: {url}")
+    global_signals.ui_update_signal.emit("Shree", f"Opening {website_name} in your default browser...")
+    try:
+        webbrowser.open_new_tab(url)
+        speak(f"{website_name} has been opened.")
+    except Exception as e:
+        logger.error(f"Error opening {website_name}: {e}")
+        speak(f"Sorry, I could not open {website_name}. An error occurred: {e}")
 
 # --- Wrapped functions for commands ---
 def install_git():
@@ -608,7 +628,10 @@ def show_help():
 
 # --- Command Processing ---
 def process_command(query_text):
-    """Processes a command string."""
+    """Processes a command string and logs it to history."""
+    # Log the command to history before processing
+    history_logger.info(query_text)
+
     query = query_text.lower()
     logger.info(f"Processing command: {query}")
     global_signals.ui_update_signal.emit("Shree", f"Processing command: '{query_text}'...") # Indicate processing
@@ -673,6 +696,63 @@ def process_command(query_text):
     elif 'run kafka' in query or 'start kafka' in query:
         run_kafka()
     
+    # --- Website Handling Commands ---
+    elif 'open google' in query:
+        speak("What would you like to search for on Google?")
+        global_signals.ui_update_signal.emit("Shree", "What would you like to search for on Google? (Type your query or speak after the beep)")
+        google_query = takeCommand_for_ui()
+        if google_query and google_query != 'None':
+            encoded_query = quote_plus(google_query)
+            search_url = f"https://www.google.com/search?q={encoded_query}"
+            _open_website(search_url, f"Google with query: '{google_query}'")
+        else:
+            speak("No search query provided. Opening Google homepage.")
+            _open_website("https://www.google.com", "Google")
+    elif 'open youtube' in query:
+        speak("What would you like to search for on YouTube?")
+        global_signals.ui_update_signal.emit("Shree", "What would you like to search for on YouTube? (Type your query or speak after the beep)")
+        youtube_query = takeCommand_for_ui()
+        if youtube_query and youtube_query != 'None':
+            encoded_query = quote_plus(youtube_query)
+            search_url = f"https://www.youtube.com/results?search_query={encoded_query}"
+            _open_website(search_url, f"YouTube with query: '{youtube_query}'")
+        else:
+            speak("No search query provided. Opening YouTube homepage.")
+            _open_website("https://www.youtube.com", "YouTube")
+    elif 'open wikipedia' in query:
+        speak("What would you like to search for on Wikipedia?")
+        global_signals.ui_update_signal.emit("Shree", "What would you like to search for on Wikipedia? (Type your query or speak after the beep)")
+        wikipedia_query = takeCommand_for_ui()
+        if wikipedia_query and wikipedia_query != 'None':
+            encoded_query = quote_plus(wikipedia_query)
+            search_url = f"https://en.wikipedia.org/wiki/Special:Search?search={encoded_query}"
+            _open_website(search_url, f"Wikipedia with query: '{wikipedia_query}'")
+        else:
+            speak("No search query provided. Opening Wikipedia homepage.")
+            _open_website("https://www.wikipedia.org", "Wikipedia")
+    elif 'open github' in query:
+        speak("What would you like to search for on GitHub?")
+        global_signals.ui_update_signal.emit("Shree", "What would you like to search for on GitHub? (Type your query or speak after the beep)")
+        github_query = takeCommand_for_ui()
+        if github_query and github_query != 'None':
+            encoded_query = quote_plus(github_query)
+            search_url = f"https://github.com/search?q={encoded_query}"
+            _open_website(search_url, f"GitHub with query: '{github_query}'")
+        else:
+            speak("No search query provided. Opening GitHub homepage.")
+            _open_website("https://github.com", "GitHub")
+    elif 'open gitlab' in query:
+        speak("What would you like to search for on GitLab?")
+        global_signals.ui_update_signal.emit("Shree", "What would you like to search for on GitLab? (Type your query or speak after the beep)")
+        gitlab_query = takeCommand_for_ui()
+        if gitlab_query and gitlab_query != 'None':
+            encoded_query = quote_plus(gitlab_query)
+            search_url = f"https://gitlab.com/search?search={encoded_query}"
+            _open_website(search_url, f"GitLab with query: '{gitlab_query}'")
+        else:
+            speak("No search query provided. Opening GitLab homepage.")
+            _open_website("https://gitlab.com", "GitLab")
+    
     elif 'help' in query or 'what can you do' in query or 'commands' in query: # New help command
         speak("Here are the commands I can help you with:")
         show_help()
@@ -685,7 +765,6 @@ def process_command(query_text):
         speak("I didn't understand that command. Please try again.")
 
 # --- PyQt5 GUI Application ---
-# Moved ShreeApp class definition outside if __name__ == '__main__':
 class ShreeApp(QWidget):
     def __init__(self):
         super().__init__()
@@ -696,7 +775,6 @@ class ShreeApp(QWidget):
         global_signals.ui_update_signal.connect(self.update_conversation_log)
         # Connect the new global confirmation request signal to a slot in ShreeApp
         global_confirmation_signals.request_blocking_dialog.connect(self._show_blocking_confirmation_dialog)
-        # Removed: Connecting password_requester.request_password.connect(self._show_password_dialog)
         global_signals.show_help_signal.connect(self._show_help_dialog) # Connect new help signal
 
     def initUI(self):
@@ -801,12 +879,27 @@ class ShreeApp(QWidget):
         
         self.mic_button = QPushButton('Speak')
         self.mic_button.setObjectName("micButton") # For stylesheet targeting
-        # Using a simple text-based mic icon for now, replace with actual icon if desired.
         self.mic_button.setIcon(QIcon(':/icons/mic.png')) # Placeholder for a custom mic icon
         self.mic_button.clicked.connect(self.start_voice_input)
         input_layout.addWidget(self.mic_button)
 
         main_layout.addLayout(input_layout)
+
+        # Control Buttons (Help, History)
+        control_buttons_layout = QHBoxLayout()
+        control_buttons_layout.setContentsMargins(0, 0, 0, 0) # No extra margins
+        control_buttons_layout.setSpacing(10) # Spacing between buttons
+
+        self.help_button = QPushButton('Help')
+        self.help_button.clicked.connect(self._show_help_dialog)
+        control_buttons_layout.addWidget(self.help_button)
+
+        self.history_button = QPushButton('View History')
+        self.history_button.clicked.connect(self._show_history_dialog)
+        control_buttons_layout.addWidget(self.history_button)
+
+        main_layout.addLayout(control_buttons_layout)
+
 
         # Mic Status Indicator
         self.mic_status_label = QLabel("Mic: Idle")
@@ -847,6 +940,9 @@ class ShreeApp(QWidget):
         self.user_input.setEnabled(not busy)
         self.send_button.setEnabled(not busy)
         self.mic_button.setEnabled(not busy)
+        self.help_button.setEnabled(not busy) # Disable help button
+        self.history_button.setEnabled(not busy) # Disable history button
+
         if busy:
             self.mic_status_label.setText("Processing...")
             self.mic_status_label.setStyleSheet("color: #667eea;") # Accent color for processing
@@ -916,6 +1012,12 @@ class ShreeApp(QWidget):
         help_dialog = HelpDialog(self)
         help_dialog.exec_() # Show dialog modally
 
+    def _show_history_dialog(self):
+        """Displays the command history dialog."""
+        history_dialog = HistoryDialog(self)
+        history_dialog.exec_() # Show dialog modally
+
+
 # --- PyQt5 Help Dialog Class ---
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
@@ -969,6 +1071,11 @@ class HelpDialog(QDialog):
             "install kafka": "Installs Apache Kafka. Requires manual steps to start services.",
             "uninstall kafka": "Uninstalls Apache Kafka. Asks about keeping/removing metadata.",
             "run kafka / start kafka": "Attempts to start Zookeeper and Kafka Broker services.",
+            "open google": "Opens Google.com in your default browser. Will ask for a search query.",
+            "open youtube": "Opens YouTube.com in your default browser. Will ask for a search query.",
+            "open wikipedia": "Opens Wikipedia.org in your default browser. Will ask for a search query.",
+            "open github": "Opens GitHub.com in your default browser. Will ask for a search query.",
+            "open gitlab": "Opens GitLab.com in your default browser. Will ask for a search query.",
             "help": "Displays this list of commands.",
             "exit / quit / goodbye": "Closes the Shree AI Assistant application."
         }
@@ -1002,6 +1109,81 @@ class HelpDialog(QDialog):
             }
         """)
         main_layout.addWidget(close_button)
+
+# --- New Command History Dialog Class ---
+class HistoryDialog(QDialog):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("Shree AI Assistant - Command History")
+        self.setGeometry(250, 250, 700, 500)
+        self.setWindowModality(Qt.ApplicationModal)
+
+        main_layout = QVBoxLayout()
+        self.setLayout(main_layout)
+
+        title = QLabel("Command History")
+        title.setFont(QFont("Inter", 18, QFont.Bold))
+        title.setAlignment(Qt.AlignCenter)
+        title.setStyleSheet("color: #667eea; margin-bottom: 10px;")
+        main_layout.addWidget(title)
+
+        self.history_display = QTextEdit()
+        self.history_display.setReadOnly(True)
+        self.history_display.setStyleSheet("""
+            background-color: #2d3748;
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            padding: 10px;
+            color: #e2e8f0;
+        """)
+        main_layout.addWidget(self.history_display)
+
+        self._load_history() # Load history when the dialog is initialized
+
+        close_button = QPushButton("Close")
+        close_button.clicked.connect(self.accept)
+        close_button.setStyleSheet("""
+            QPushButton {
+                background-color: #667eea;
+                color: white;
+                border-radius: 8px;
+                padding: 10px 20px;
+                font-weight: 600;
+            }
+            QPushButton:hover {
+                background-color: #5a67d8;
+            }
+        """)
+        main_layout.addWidget(close_button)
+
+    def _load_history(self):
+        """Reads and displays the command history from the log file."""
+        history_content = []
+        history_file_path = "command_history.log"
+        if os.path.exists(history_file_path):
+            try:
+                with open(history_file_path, 'r') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line:
+                            # Assuming format: YYYY-MM-DD HH:MM:SS - Command Text
+                            parts = line.split(' - ', 1) # Split only on the first occurrence of ' - '
+                            if len(parts) == 2:
+                                timestamp_str, command_text = parts
+                                # Format for display, e.g., "<b>[Timestamp]</b>: Command Text"
+                                history_content.append(f"<p><span style='font-weight: 600; color: #9be8ff;'>[{timestamp_str}]</span>: {command_text}</p>")
+                            else:
+                                history_content.append(f"<p>{line}</p>") # Fallback for malformed lines
+            except Exception as e:
+                logger.error(f"Error reading command history file: {e}")
+                self.history_display.setText(f"Error loading history: {e}")
+                return
+        else:
+            history_content.append("<p>No command history available yet.</p>")
+
+        self.history_display.setHtml("".join(history_content))
+        self.history_display.verticalScrollBar().setValue(self.history_display.verticalScrollBar().maximum()) # Scroll to bottom
+
 
 # --- Main Application Entry Point ---
 shree_app_instance = None # Global reference to the app instance

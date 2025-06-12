@@ -355,3 +355,88 @@ Click 'No' to remove metadata.
 2025-06-12 02:25:48,417 - shree - INFO - Processing command: help
 2025-06-12 02:25:48,418 - shree - INFO - Speaking: Here are the commands I can help you with:
 2025-06-12 02:26:12,790 - shree - INFO - Worker task finished.
+2025-06-12 12:06:11,844 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 12:06:31,289 - shree - INFO - Processing command: open youtube
+2025-06-12 12:06:31,292 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-12 12:06:40,408 - shree - INFO - Attempting to open YouTube with query: 'shivaji maharaj' at: https://www.youtube.com/results?search_query=shivaji+maharaj
+2025-06-12 12:06:40,459 - shree - INFO - Speaking: YouTube with query: 'shivaji maharaj' has been opened.
+2025-06-12 12:06:45,811 - shree - INFO - Worker task finished.
+2025-06-12 12:06:58,944 - shree - INFO - Processing command: close youtube
+2025-06-12 12:06:58,949 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-12 12:07:04,669 - shree - INFO - Worker task finished.
+2025-06-12 12:07:20,964 - shree - INFO - Processing command: close youtube
+2025-06-12 12:07:20,975 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-12 12:07:25,917 - shree - INFO - Worker task finished.
+2025-06-12 12:07:35,766 - shree - INFO - Could not understand audio
+2025-06-12 12:07:35,770 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 12:07:39,997 - shree - INFO - Worker task finished.
+2025-06-12 12:07:49,324 - shree - INFO - Processing command: fail
+2025-06-12 12:07:49,328 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-12 12:07:54,077 - shree - INFO - Worker task finished.
+2025-06-12 12:07:59,354 - shree - INFO - Could not understand audio
+2025-06-12 12:07:59,363 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 12:08:03,079 - shree - INFO - Worker task finished.
+2025-06-12 12:08:09,586 - shree - INFO - Could not understand audio
+2025-06-12 12:08:09,598 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 12:08:13,918 - shree - INFO - Worker task finished.
+2025-06-12 12:08:17,304 - shree - INFO - Processing command: help
+2025-06-12 12:08:17,308 - shree - INFO - Speaking: Here are the commands I can help you with:
+2025-06-12 12:08:45,846 - shree - INFO - Worker task finished.
+2025-06-12 13:14:27,051 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 13:14:57,892 - shree - INFO - Processing command: open google
+2025-06-12 13:14:57,894 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-12 13:14:57,919 - shree - INFO - Speaking: Google has been opened.
+2025-06-12 13:15:00,870 - shree - INFO - Worker task finished.
+2025-06-12 13:15:23,631 - shree - INFO - Processing command: open google
+2025-06-12 13:15:23,633 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-12 13:15:23,635 - shree - INFO - Speaking: Google has been opened.
+2025-06-12 13:15:26,085 - shree - INFO - Worker task finished.
+2025-06-12 13:15:33,768 - shree - INFO - Could not understand audio
+2025-06-12 13:15:33,779 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 13:15:37,800 - shree - INFO - Worker task finished.
+2025-06-12 13:15:43,920 - shree - INFO - Processing command: open youtube
+2025-06-12 13:15:43,932 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-12 13:15:54,982 - shree - INFO - Attempting to open YouTube with query: 'mobile' at: https://www.youtube.com/results?search_query=mobile
+2025-06-12 13:15:54,997 - shree - INFO - Speaking: YouTube with query: 'mobile' has been opened.
+2025-06-12 13:15:59,815 - shree - INFO - Worker task finished.
+2025-06-12 13:16:02,848 - shree - INFO - Could not understand audio
+2025-06-12 13:16:02,865 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 13:16:06,661 - shree - INFO - Worker task finished.
+2025-06-12 13:16:22,309 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 13:20:43,541 - shree - INFO - Speaking: Goodbye!
+2025-06-12 13:22:28,089 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 13:22:44,661 - shree - INFO - Processing command: open google
+2025-06-12 13:22:44,664 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-12 13:22:54,159 - shree - INFO - Timeout occurred while listening
+2025-06-12 13:22:54,167 - shree - INFO - Speaking: No search query provided. Opening Google homepage.
+2025-06-12 13:22:59,185 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-12 13:22:59,248 - shree - INFO - Speaking: Google has been opened.
+2025-06-12 13:23:01,725 - shree - INFO - Worker task finished.
+2025-06-12 13:23:15,703 - shree - INFO - Could not understand audio
+2025-06-12 13:23:15,714 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 13:23:19,472 - shree - INFO - Worker task finished.
+2025-06-12 13:23:27,184 - shree - INFO - Processing command: open youtube
+2025-06-12 13:23:27,194 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-12 13:23:36,709 - shree - INFO - Attempting to open YouTube with query: 'shivaji maharaj' at: https://www.youtube.com/results?search_query=shivaji+maharaj
+2025-06-12 13:23:36,726 - shree - INFO - Speaking: YouTube with query: 'shivaji maharaj' has been opened.
+2025-06-12 13:23:42,706 - shree - INFO - Worker task finished.
+2025-06-12 13:23:50,434 - shree - INFO - Processing command: open google
+2025-06-12 13:23:50,449 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-12 13:23:57,501 - shree - INFO - Attempting to open Google with query: 'mobile' at: https://www.google.com/search?q=mobile
+2025-06-12 13:23:57,520 - shree - INFO - Speaking: Google with query: 'mobile' has been opened.
+2025-06-12 13:24:02,226 - shree - INFO - Worker task finished.
+2025-06-12 13:24:05,646 - shree - INFO - Could not understand audio
+2025-06-12 13:24:05,675 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 13:24:09,842 - shree - INFO - Worker task finished.
+2025-06-12 13:24:45,620 - shree - INFO - Processing command: install git
+2025-06-12 13:24:45,624 - shree - INFO - Speaking: Installing Git now.
+2025-06-12 13:24:48,626 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 13:24:48,631 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-12 13:25:18,616 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-12 13:25:22,589 - shree - INFO - Worker task finished.
+2025-06-12 13:25:33,571 - shree - INFO - Processing command: open file manager
+2025-06-12 13:25:33,604 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-12 13:25:38,866 - shree - INFO - Worker task finished.
+2025-06-12 13:26:01,525 - shree - INFO - Processing command: open file manager
+2025-06-12 13:26:01,544 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-12 13:26:07,261 - shree - INFO - Worker task finished.
