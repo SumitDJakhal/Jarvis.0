@@ -128,3 +128,108 @@ main() {
 
 # Run the main function
 main
+
+# filepath: /home/danav/Documents/Shree/ui.py
+import customtkinter as ctk
+import threading
+from PIL import Image
+import os
+
+class ShreeUI(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+        
+        # Configure window
+        self.title("Shree Voice Assistant")
+        self.geometry("800x600")
+        
+        # Set theme
+        ctk.set_appearance_mode("dark")
+        ctk.set_default_color_theme("blue")
+        
+        # Configure grid
+        self.grid_columnconfigure(0, weight=1)
+        self.grid_rowconfigure(0, weight=1)
+        
+        # Create main frame
+        self.main_frame = ctk.CTkFrame(self)
+        self.main_frame.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
+        self.main_frame.grid_columnconfigure(0, weight=1)
+        
+        # Add logo/status indicator
+        self.status_frame = ctk.CTkFrame(self.main_frame, fg_color="transparent")
+        self.status_frame.grid(row=0, column=0, padx=20, pady=(20,10), sticky="ew")
+        
+        self.status_label = ctk.CTkLabel(
+            self.status_frame, 
+            text="Shree is ready...",
+            font=("Roboto", 24, "bold")
+        )
+        self.status_label.grid(row=0, column=0, padx=20, pady=10)
+        
+        # Add conversation display
+        self.conversation_frame = ctk.CTkScrollableFrame(
+            self.main_frame,
+            height=400
+        )
+        self.conversation_frame.grid(row=1, column=0, padx=20, pady=(0,20), sticky="nsew")
+        
+        # Add control buttons
+        self.button_frame = ctk.CTkFrame(self.main_frame, fg_color="transparent")
+        self.button_frame.grid(row=2, column=0, padx=20, pady=(0,20), sticky="ew")
+        
+        self.listen_button = ctk.CTkButton(
+            self.button_frame,
+            text="Start Listening",
+            font=("Roboto", 16),
+            height=40,
+            command=self.toggle_listening
+        )
+        self.listen_button.grid(row=0, column=0, padx=10)
+        
+        self.clear_button = ctk.CTkButton(
+            self.button_frame,
+            text="Clear History",
+            font=("Roboto", 16),
+            height=40,
+            command=self.clear_conversation
+        )
+        self.clear_button.grid(row=0, column=1, padx=10)
+        
+        # State variables
+        self.is_listening = False
+        self.conversation_labels = []
+
+    def toggle_listening(self):
+        self.is_listening = not self.is_listening
+        if self.is_listening:
+            self.listen_button.configure(text="Stop Listening", fg_color="#E64A19")
+            self.status_label.configure(text="Listening...")
+        else:
+            self.listen_button.configure(text="Start Listening", fg_color=["#1F538D", "#1F538D"])
+            self.status_label.configure(text="Shree is ready...")
+
+    def add_conversation_entry(self, speaker, text):
+        """Add a new conversation entry to the display"""
+        frame = ctk.CTkFrame(self.conversation_frame)
+        frame.grid(row=len(self.conversation_labels), column=0, padx=10, pady=5, sticky="ew")
+        
+        label = ctk.CTkLabel(
+            frame,
+            text=f"{speaker}: {text}",
+            font=("Roboto", 14),
+            wraplength=600,
+            justify="left"
+        )
+        label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
+        self.conversation_labels.append(frame)
+
+    def clear_conversation(self):
+        """Clear all conversation entries"""
+        for label in self.conversation_labels:
+            label.destroy()
+        self.conversation_labels = []
+
+def launch_ui():
+    app = ShreeUI()
+    app.mainloop()

@@ -53,3 +53,5 @@ whichcraft==0.6.1
 wikipedia==1.4.0
 zope.event==5.0
 zope.interface==6.4.post2
+customtkinter>=5.2.0
+pillow>=10.0.0

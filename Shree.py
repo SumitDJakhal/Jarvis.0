@@ -9,15 +9,16 @@ from gtts import gTTS  # Google Text-to-Speech
 from dotenv import load_dotenv  # For secure env variables
 import time # Import time for delays
 import select # For non-blocking read on subprocess pipes
-import webbrowser # Added for opening websites
-import datetime # Added for timestamps in history
-from urllib.parse import quote_plus # Added for URL encoding search queries
+import webbrowser # For opening websites
+import datetime # For timestamps in history
+from urllib.parse import quote_plus # For URL encoding search queries
+import shutil  # For checking system app availability
 
 # PyQt5 Imports for UI
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout, QPushButton,
     QLineEdit, QTextEdit, QLabel, QFrame, QMessageBox, QDialog,
-    QScrollArea
+    QScrollArea, QInputDialog # Added QInputDialog for user text input
 )
 from PyQt5.QtCore import Qt, QThread, pyqtSignal, QObject, QEventLoop
 from PyQt5.QtGui import QColor, QPalette, QIcon, QFont
@@ -52,7 +53,7 @@ load_dotenv()
 # --- Global Signal Handler (for communication from worker threads and global functions to UI) ---
 class GlobalSignaller(QObject):
     ui_update_signal = pyqtSignal(str, str) # (sender, message)
-    show_help_signal = pyqtSignal() # New signal to request showing the help dialog
+    show_help_signal = pyqtSignal() # Signal to request showing the help dialog
 
 # Create a single global instance of the signaller
 global_signals = GlobalSignaller()
@@ -64,6 +65,13 @@ class BlockingConfirmationSignaller(QObject):
 
 global_confirmation_signals = BlockingConfirmationSignaller()
 
+# --- Global Signal for Blocking UI Text Input ---
+class BlockingTextInputSignaller(QObject):
+    request_text_input = pyqtSignal(str, str) # (message, default_text)
+    text_input_response = pyqtSignal(str) # (input_text)
+
+global_text_input_signals = BlockingTextInputSignaller()
+
 # --- Worker Thread for Long-Running Tasks ---
 class WorkerThread(QThread):
     finished = pyqtSignal()
@@ -73,15 +81,6 @@ class WorkerThread(QThread):
         self._running_task = None
 
     def run(self):
-        pass # Task is executed directly by self.execute_task()
-
-    def set_task(self, func, args):
-        """Sets the task for the worker thread to execute."""
-        self._running_task = (func, args)
-        if not self.isRunning():
-            self.start()
-
-    def execute_task(self):
         """Executes the set task and signals completion."""
         if self._running_task:
             func, args = self._running_task
@@ -93,6 +92,12 @@ class WorkerThread(QThread):
             finally:
                 self._running_task = None
                 self.finished.emit() # Signal that the task is done
+
+    def set_task(self, func, args):
+        """Sets the task for the worker thread to execute and starts it."""
+        self._running_task = (func, args)
+        if not self.isRunning():
+            self.start()
 
 # --- Voice Assistant Core Functions (modified to interact with UI via global_signals) ---
 
@@ -106,14 +111,17 @@ def speak(text):
         tts.save("output.mp3")
         
         try:
+            # Use subprocess.run for simple command execution
+            # Redirect stdout/stderr to DEVNULL to suppress console output from mpg123
             subprocess.run(['mpg123', "-q", "output.mp3"], check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         except FileNotFoundError:
             logger.error("mpg123 not found. Please install it (e.g., sudo apt install mpg123).")
-            global_signals.ui_update_signal.emit("Shree", "Error: mpg123 not found. Cannot play audio.")
+            global_signals.ui_update_signal.emit("Shree", "Error: mpg123 not found. Cannot play audio. Please install 'mpg123'.")
         except subprocess.CalledProcessError as e:
             logger.error(f"Error playing audio with mpg123: {e}")
             global_signals.ui_update_signal.emit("Shree", f"Error playing audio: {e}")
         finally:
+            # Ensure the temporary audio file is removed
             if os.path.exists("output.mp3"):
                 os.remove("output.mp3")
     except Exception as e:
@@ -127,15 +135,17 @@ def takeCommand_for_ui():
         shree_app_instance.toggle_mic_status(True) # Turn on mic indicator in UI
     
     r = sr.Recognizer()
-    query = "None"
+    query = "None" # Default return value
     try:
         global_signals.ui_update_signal.emit("Shree", "Listening...")
         with sr.Microphone() as source:
-            r.adjust_for_ambient_noise(source, duration=0.5)
-            r.pause_threshold = 1
+            r.adjust_for_ambient_noise(source, duration=0.5) # Adjust for ambient noise
+            r.pause_threshold = 1 # Seconds of non-speaking audio before a phrase is considered complete
+            # Listen for audio for a maximum of 5 seconds, with a phrase time limit of 5 seconds
             audio = r.listen(source, timeout=5, phrase_time_limit=5)
         
         global_signals.ui_update_signal.emit("Shree", "Recognizing...")
+        # Recognize speech using Google Speech Recognition
         query = r.recognize_google(audio, language='en-in')
         global_signals.ui_update_signal.emit("You", f"(Voice) {query}")
         return query.lower()
@@ -160,7 +170,7 @@ def takeCommand_for_ui():
         if shree_app_instance:
             shree_app_instance.toggle_mic_status(False) # Turn off mic indicator
 
-# --- Helper functions (using UI for confirmation) ---
+# --- Helper functions (using UI for confirmation and text input) ---
 
 def get_confirmation_for_metadata_clear():
     """
@@ -209,6 +219,36 @@ def get_confirmation_for_metadata_clear():
     logger.info(f"UI confirmation result: {confirmation_result}")
     return confirmation_result # This is 'yes' (clear) or 'no' (keep) for pkgInstaller.sh
 
+def get_blocking_text_input(message, default_text=""):
+    """
+    Asks the user for text input via a UI dialog.
+    This function will block the worker thread until a response is received from the UI.
+    Returns the user's input string, or an empty string if cancelled.
+    """
+    logger.info(f"Requesting UI text input: {message}")
+    
+    # Emit signal to main UI thread to show the blocking text input dialog
+    global_text_input_signals.request_text_input.emit(message, default_text)
+
+    loop = QEventLoop()
+    input_result = "" # Initialize with empty string for cancellation or no input
+    
+    def on_text_input_response(response_string):
+        nonlocal input_result
+        input_result = response_string
+        loop.quit()
+
+    global_text_input_signals.text_input_response.connect(on_text_input_response)
+    loop.exec_()
+    
+    try:
+        global_text_input_signals.text_input_response.disconnect(on_text_input_response)
+    except TypeError:
+        pass
+
+    logger.info(f"UI text input result: '{input_result}'")
+    return input_result
+
 def execute_shell_script(script_name, *args):
     """
     Helper function to execute any shell script, relying on system's sudo password prompt
@@ -240,11 +280,9 @@ def execute_shell_script(script_name, *args):
         # Build the command list
         command = ['bash', script_path] + list(args)
 
-        # Determine if sudo is required
-        # Note: We now rely on the system's sudo prompt, not our custom UI one.
+        # Determine if sudo is required (simple heuristic, relying on script handling for details)
         requires_sudo_password = False
         if any(arg in command for arg in ['install', 'uninstall']) and script_name in ['pkgInstaller.sh', 'git_utils.sh', 'kafka_utils.sh']:
-            # Assume these operations usually require sudo
             requires_sudo_password = True
         
         if requires_sudo_password:
@@ -261,16 +299,15 @@ def execute_shell_script(script_name, *args):
             stdin=subprocess.DEVNULL, # Sudo will manage its own stdin for password
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            text=True, # For text input/output
+            text=True, # For text input/output, decodes stdout/stderr as text
             bufsize=1 # Line-buffered output for real-time streaming
         )
 
         # --- Stream output in real-time ---
         pipes = [process.stdout, process.stderr]
-        stdout_buffer = [] # Not strictly needed for streaming, but good for debugging if process fails later
-        stderr_buffer = []
-
+        
         while process.poll() is None or pipes:
+            # Use select to non-blockingly read from pipes
             rlist, _, _ = select.select(pipes, [], [], 0.1) # Timeout to keep UI responsive
 
             for fd in rlist:
@@ -278,10 +315,8 @@ def execute_shell_script(script_name, *args):
                 if line:
                     if fd == process.stdout:
                         global_signals.ui_update_signal.emit("System Output", line.strip())
-                        stdout_buffer.append(line)
                     elif fd == process.stderr:
                         global_signals.ui_update_signal.emit("System Error", line.strip())
-                        stderr_buffer.append(line)
                 else: # EOF, pipe closed
                     if fd in pipes:
                         pipes.remove(fd)
@@ -291,11 +326,9 @@ def execute_shell_script(script_name, *args):
                 remaining_stdout = process.stdout.read()
                 if remaining_stdout:
                     global_signals.ui_update_signal.emit("System Output", remaining_stdout.strip())
-                    stdout_buffer.append(remaining_stdout)
                 remaining_stderr = process.stderr.read()
                 if remaining_stderr:
                     global_signals.ui_update_signal.emit("System Error", remaining_stderr.strip())
-                    stderr_buffer.append(remaining_stderr)
                 break 
 
         return_code = process.returncode # Get final return code
@@ -323,6 +356,61 @@ def _open_website(url, website_name):
         logger.error(f"Error opening {website_name}: {e}")
         speak(f"Sorry, I could not open {website_name}. An error occurred: {e}")
 
+# --- Helper to open system apps ---
+def open_system_app(app_name):
+    """Opens a system application by its executable name and logs errors, trying common alternatives."""
+    app_commands = {
+        'gnome-control-center': ['gnome-control-center', 'kde-settings', 'xfce4-settings-manager', 'lxappearance', 'systemsettings'],
+        'gnome-terminal': ['gnome-terminal', 'konsole', 'xfce4-terminal', 'lxterminal', 'xterm'],
+        'nautilus': ['nautilus', 'dolphin', 'thunar', 'pcmanfm'], # file manager alternatives
+        'gnome-calculator': ['gnome-calculator', 'kcalc', 'galculator'],
+        'gnome-calendar': ['gnome-calendar', 'korganizer'], # Limited alternatives for calendar
+        'gedit': ['gedit', 'kate', 'mousepad', 'leafpad'],
+        'baobab': ['baobab', 'k4dirstat', 'qdirstat'], # Disk usage alternatives
+        'gnome-system-monitor': ['gnome-system-monitor', 'ksysguard', 'xfce4-taskmanager'],
+        'gnome-screenshot': ['gnome-screenshot', 'spectacle', 'xfce4-screenshooter'],
+        'update-manager': ['update-manager'], # Generally specific to Debian/Ubuntu
+        'gnome-software': ['gnome-software', 'kde-store', 'snap-store'], # Software center alternatives
+    }
+
+    executables_to_try = app_commands.get(app_name, [app_name]) # Get list of commands, or just app_name if not in dict
+
+    found_executable = None
+    for cmd in executables_to_try:
+        if shutil.which(cmd):
+            found_executable = cmd
+            break
+
+    if found_executable is None:
+        speak(f"'{app_name}' or a suitable alternative is not installed or not found in PATH for your desktop environment.")
+        return
+
+    try:
+        # Capture stderr to log potential error messages from the application
+        # Using stdout=subprocess.DEVNULL to suppress normal output, focus on errors
+        process = subprocess.Popen([found_executable], stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+        # Read any stderr output. Use communicate with a timeout to prevent blocking indefinitely.
+        stderr_output = process.communicate(timeout=5)[1] # 5-second timeout for communication
+        
+        if stderr_output:
+            logger.error(f"Error output from {found_executable}: {stderr_output.strip()}")
+            global_signals.ui_update_signal.emit("System Error", f"Error from {found_executable}: {stderr_output.strip()}")
+        
+        # Check return code immediately for errors, though Popen for GUI apps often returns 0 quickly
+        if process.returncode is not None and process.returncode != 0:
+            speak(f"Failed to open {found_executable}. (Exit code: {process.returncode}). Check 'System Error' log.")
+        else:
+            speak(f"{found_executable} has been opened.")
+    except FileNotFoundError:
+        speak(f"Failed to open {found_executable}: executable not found (this should have been caught by shutil.which, but as a fallback).")
+        logger.error(f"FileNotFoundError when opening {found_executable}")
+    except subprocess.TimeoutExpired:
+        logger.warning(f"Timeout when trying to read stderr from {found_executable}. The app might still be launching.")
+        speak(f"{found_executable} is attempting to open, but I timed out waiting for its initial output. Check your desktop.")
+    except Exception as e:
+        speak(f"Failed to open {found_executable}: {e}")
+        logger.error(f"An unexpected error occurred trying to open {found_executable}: {e}")
+
 # --- Wrapped functions for commands ---
 def install_git():
     speak("Installing Git now.")
@@ -340,17 +428,14 @@ def uninstall_git():
     else:
         speak("Git uninstallation failed.")
 
-
 def check_git_configuration():
     speak("Checking your Git user configuration.")
     execute_shell_script('git_utils.sh', 'check_config')
 
 def generate_and_display_ssh_key():
     speak("To generate an SSH key, I need your email address for the key comment.")
-    global_signals.ui_update_signal.emit("Shree", "Please type your email for the SSH key comment (e.g., 'your_email@example.com'):")
-    # For UI input, we would typically use a QInputDialog or a dedicated input field.
-    # For now, this will block and wait for console input if the voice fails to provide it.
-    user_email = input().strip()
+    # Use GUI input for the email address
+    user_email = get_blocking_text_input("Please type your email for the SSH key comment:")
     if not user_email:
         speak("No email provided. SSH key generation aborted.")
         return
@@ -377,70 +462,53 @@ def install_jdk():
     
     speak("Which OpenJDK version would you like to install? For example, you can say 11, 17, or 21.")
     
-    version_obtained = False
-    for i in range(3):
-        if not version_obtained:
-            speak(f"Attempt {i+1} for voice input.")
-            query = takeCommand_for_ui()
-            if query != "None":
-                found_versions = [v for v in valid_versions if v in query]
-                if found_versions:
-                    jdk_version = found_versions[0]
-                    version_obtained = True
-                    break
-                else:
-                    speak("I heard something, but it doesn't sound like a valid JDK version.")
+    # First attempt with voice input
+    query = takeCommand_for_ui()
+    if query != "None":
+        found_versions = [v for v in valid_versions if v in query]
+        if found_versions:
+            jdk_version = found_versions[0]
+        else:
+            speak("I heard something, but it doesn't sound like a valid JDK version.")
+    else:
+        speak("I didn't catch that.")
+    
+    # If voice input failed, prompt with text input
+    if jdk_version is None:
+        speak("Would you like to type the version instead?")
+        typed_choice = takeCommand_for_ui() # Still using voice to get choice for typing
+        if "yes" in typed_choice:
+            typed_version = get_blocking_text_input(f"Please type the JDK version ({', '.join(valid_versions)}): ")
+            if typed_version in valid_versions:
+                jdk_version = typed_version
             else:
-                speak("I didn't catch that.")
-        
-        if not version_obtained and i < 2:
-            speak("Would you like to type the version instead?")
-            # This would ideally be a UI text input pop-up
-            typed_choice = takeCommand_for_ui() # Still using voice to get choice
-            if "yes" in typed_choice:
-                global_signals.ui_update_signal.emit("Shree", "Please type the JDK version (e.g., 11, 17, 21): ")
-                typed_version = input().strip() # Still console input for now
-                if typed_version in valid_versions:
-                    jdk_version = typed_version
-                    version_obtained = True
-                    break
-                else:
-                    speak("Invalid version typed. Let's try voice again.")
-            elif "no" in typed_choice:
-                speak("Okay, trying voice again.")
-            else:
-                speak("I didn't understand your choice. Let's try voice again.")
+                speak("Invalid version typed. Aborting JDK installation.")
+                return
+        else:
+            speak("Okay, aborting JDK installation.")
+            return
 
-    if not version_obtained:
-        speak("I'm having trouble getting the JDK version. Aborting JDK installation.")
-        return
-
-    if jdk_version not in valid_versions:
+    if jdk_version is None or jdk_version not in valid_versions:
         speak(f"The version {jdk_version} is not a common LTS version I can install. Please choose from {', '.join(valid_versions)}.")
         return
 
     confirmed = False
-    for i in range(3):
-        speak(f"You said version {jdk_version}. Is that correct? Say yes or no.")
-        confirmation_query = takeCommand_for_ui()
+    speak(f"You said version {jdk_version}. Is that correct? Say yes or no.")
+    confirmation_query = takeCommand_for_ui()
 
-        if "yes" in confirmation_query:
-            confirmed = True
-            break
-        elif "no" in confirmation_query:
-            speak("Okay, let's restart the version selection process.")
-            speak("Installation aborted as you indicated the version was incorrect.")
-            return
-        else:
-            speak("I didn't understand your confirmation. Please say 'yes' or 'no' again.")
-    if not confirmed:
-        speak("Could not confirm JDK version. Aborting installation.")
+    if "yes" in confirmation_query:
+        confirmed = True
+    else:
+        speak("Installation aborted as you indicated the version was incorrect.")
         return
 
-    speak(f"Okay, I will now attempt to install OpenJDK version {jdk_version}. This may require your sudo password.")
-    if execute_shell_script('pkgInstaller.sh', 'install', 'jdk', jdk_version):
-        speak(f"OpenJDK version {jdk_version} installed successfully.")
-        speak("Environment variables for Java are typically set by the system after installation, or you might need to restart your terminal.")
+    if confirmed:
+        speak(f"Okay, I will now attempt to install OpenJDK version {jdk_version}. This may require your sudo password.")
+        if execute_shell_script('pkgInstaller.sh', 'install', 'jdk', jdk_version):
+            speak(f"OpenJDK version {jdk_version} installed successfully.")
+            speak("Environment variables for Java are typically set by the system after installation, or you might need to restart your terminal.")
+    else:
+        speak("Could not confirm JDK version. Aborting installation.")
 
 def uninstall_jdk():
     valid_versions = ["11", "17", "21"]
@@ -448,44 +516,33 @@ def uninstall_jdk():
     
     speak("Which OpenJDK version would you like to uninstall? For example, you can say 11, 17, or 21.")
 
-    version_obtained = False
-    for i in range(3):
-        if not version_obtained:
-            speak(f"Attempt {i+1} for voice input.")
-            query = takeCommand_for_ui()
-            if query != "None":
-                found_versions = [v for v in query if v in valid_versions]
-                if found_versions:
-                    jdk_version = found_versions[0]
-                    version_obtained = True
-                    break
-                else:
-                    speak("I heard something, but it doesn't sound like a valid JDK version.")
+    # First attempt with voice input
+    query = takeCommand_for_ui()
+    if query != "None":
+        found_versions = [v for v in query if v in valid_versions]
+        if found_versions:
+            jdk_version = found_versions[0]
+        else:
+            speak("I heard something, but it doesn't sound like a valid JDK version.")
+    else:
+        speak("I didn't catch that.")
+    
+    # If voice input failed, prompt with text input
+    if jdk_version is None:
+        speak("Would you like to type the version instead?")
+        typed_choice = takeCommand_for_ui() # Still using voice to get choice for typing
+        if "yes" in typed_choice:
+            typed_version = get_blocking_text_input(f"Please type the JDK version ({', '.join(valid_versions)}): ")
+            if typed_version in valid_versions:
+                jdk_version = typed_version
             else:
-                speak("I didn't catch that.")
-        
-        if not version_obtained and i < 2:
-            speak("Would you like to type the version instead?")
-            typed_choice = takeCommand_for_ui()
-            if "yes" in typed_choice:
-                global_signals.ui_update_signal.emit("Shree", "Please type the JDK version (e.g., 11, 17, 21): ")
-                typed_version = input().strip()
-                if typed_version in valid_versions:
-                    jdk_version = typed_version
-                    version_obtained = True
-                    break
-                else:
-                    speak("Invalid version typed. Let's try voice again.")
-            elif "no" in typed_choice:
-                speak("Okay, trying voice again.")
-            else:
-                speak("I didn't understand your choice. Let's try voice again.")
+                speak("Invalid version typed. Aborting JDK uninstallation.")
+                return
+        else:
+            speak("Okay, aborting JDK uninstallation.")
+            return
 
-    if not version_obtained:
-        speak("I'm having trouble getting the JDK version. Aborting JDK uninstallation.")
-        return
-
-    if jdk_version not in valid_versions:
+    if jdk_version is None or jdk_version not in valid_versions:
         speak(f"The version {jdk_version} is not a common LTS version I can uninstall. Please choose from {', '.join(valid_versions)}.")
         return
 
@@ -498,7 +555,6 @@ def uninstall_jdk():
         speak(f"OpenJDK version {jdk_version} has been uninstalled successfully, and its associated metadata was {metadata_action_text}.")
     else:
         speak("OpenJDK uninstallation failed.")
-
 
 def install_vscode():
     speak("Installing Visual Studio Code now.")
@@ -714,10 +770,12 @@ def process_command(query_text):
         youtube_query = takeCommand_for_ui()
         if youtube_query and youtube_query != 'None':
             encoded_query = quote_plus(youtube_query)
-            search_url = f"https://www.youtube.com/results?search_query={encoded_query}"
+            # Corrected Youtube URL
+            search_url = f"https://www.youtube.com/results?search_query={encoded_query}" 
             _open_website(search_url, f"YouTube with query: '{youtube_query}'")
         else:
             speak("No search query provided. Opening YouTube homepage.")
+            # Corrected YouTube homepage URL
             _open_website("https://www.youtube.com", "YouTube")
     elif 'open wikipedia' in query:
         speak("What would you like to search for on Wikipedia?")
@@ -753,6 +811,30 @@ def process_command(query_text):
             speak("No search query provided. Opening GitLab homepage.")
             _open_website("https://gitlab.com", "GitLab")
     
+    # --- System Application Open Commands ---
+    elif 'open settings' in query:
+        open_system_app('gnome-control-center')
+    elif 'open terminal' in query:
+        open_system_app('gnome-terminal')
+    elif 'open files' in query or 'open file manager' in query:
+        open_system_app('nautilus')
+    elif 'open calculator' in query:
+        open_system_app('gnome-calculator')
+    elif 'open calendar' in query:
+        open_system_app('gnome-calendar')
+    elif 'open text editor' in query:
+        open_system_app('gedit')
+    elif 'open disk usage' in query:
+        open_system_app('baobab')
+    elif 'open system monitor' in query:
+        open_system_app('gnome-system-monitor')
+    elif 'open screenshot' in query:
+        open_system_app('gnome-screenshot')
+    elif 'open software updater' in query:
+        open_system_app('update-manager')
+    elif 'open software center' in query:
+        open_system_app('gnome-software')
+
     elif 'help' in query or 'what can you do' in query or 'commands' in query: # New help command
         speak("Here are the commands I can help you with:")
         show_help()
@@ -775,6 +857,8 @@ class ShreeApp(QWidget):
         global_signals.ui_update_signal.connect(self.update_conversation_log)
         # Connect the new global confirmation request signal to a slot in ShreeApp
         global_confirmation_signals.request_blocking_dialog.connect(self._show_blocking_confirmation_dialog)
+        # Connect the new global text input request signal to a slot in ShreeApp
+        global_text_input_signals.request_text_input.connect(self._show_blocking_text_input_dialog)
         global_signals.show_help_signal.connect(self._show_help_dialog) # Connect new help signal
 
     def initUI(self):
@@ -936,7 +1020,7 @@ class ShreeApp(QWidget):
 
 
     def set_ui_busy(self, busy):
-        """Sets the UI to a busy or idle state."""
+        """Sets the UI to a busy or idle state, disabling/enabling controls."""
         self.user_input.setEnabled(not busy)
         self.send_button.setEnabled(not busy)
         self.mic_button.setEnabled(not busy)
@@ -958,15 +1042,15 @@ class ShreeApp(QWidget):
             self.update_conversation_log("You", command)
             self.user_input.clear()
             self.set_ui_busy(True) # Set UI to busy
+            # Changed: Removed direct call to .execute_task()
             self.worker_thread.set_task(process_command, (command,))
-            self.worker_thread.execute_task() # Trigger task execution in the worker thread
 
     def start_voice_input(self):
         """Starts the voice recognition process in a worker thread."""
         self.update_conversation_log("You", "Activating microphone...")
         self.set_ui_busy(True) # Set UI to busy
+        # Changed: Removed direct call to .execute_task()
         self.worker_thread.set_task(self._run_voice_command, ())
-        self.worker_thread.execute_task() # Trigger task execution in the worker thread
 
     def _run_voice_command(self):
         """Internal helper to call takeCommand_for_ui and then process the result."""
@@ -1006,6 +1090,26 @@ class ShreeApp(QWidget):
         # Emit the result back to the worker thread via the global signal
         global_confirmation_signals.dialog_response.emit(result_for_script)
         logger.info(f"User chose: {'No' if reply == QMessageBox.No else 'Yes'} (for keeping metadata). Emitting result: {result_for_script}")
+
+    def _show_blocking_text_input_dialog(self, message, default_text=""):
+        """
+        Displays a QInputDialog to get text input from the user,
+        and emits the result back via a global signal.
+        This runs on the main UI thread.
+        """
+        logger.info(f"Showing text input dialog: {message}")
+        text, ok = QInputDialog.getText(
+            self,
+            'Input Required', # Title of the dialog
+            message,
+            QLineEdit.Normal,
+            default_text
+        )
+        if ok:
+            global_text_input_signals.text_input_response.emit(text)
+        else:
+            global_text_input_signals.text_input_response.emit("") # Emit empty string if cancelled
+        logger.info(f"User entered: '{text}' (OK: {ok}). Emitting result.")
 
     def _show_help_dialog(self):
         """Displays the help dialog."""
@@ -1076,6 +1180,17 @@ class HelpDialog(QDialog):
             "open wikipedia": "Opens Wikipedia.org in your default browser. Will ask for a search query.",
             "open github": "Opens GitHub.com in your default browser. Will ask for a search query.",
             "open gitlab": "Opens GitLab.com in your default browser. Will ask for a search query.",
+            "open settings": "Opens the system settings application.",
+            "open terminal": "Opens the default terminal application.",
+            "open files / open file manager": "Opens the default file manager (Nautilus).",
+            "open calculator": "Opens the system calculator.",
+            "open calendar": "Opens the system calendar application.",
+            "open text editor": "Opens the default text editor (Gedit).",
+            "open disk usage": "Opens the disk usage analyzer (Baobab).",
+            "open system monitor": "Opens the system monitor application.",
+            "open screenshot": "Opens the screenshot tool.",
+            "open software updater": "Opens the software updater.",
+            "open software center": "Opens the software center (Gnome Software).",
             "help": "Displays this list of commands.",
             "exit / quit / goodbye": "Closes the Shree AI Assistant application."
         }
@@ -1166,7 +1281,7 @@ class HistoryDialog(QDialog):
                     for line in f:
                         line = line.strip()
                         if line:
-                            # Assuming format: YYYY-MM-DD HH:MM:SS - Command Text
+                            # Assuming format:YYYY-MM-DD HH:MM:SS - Command Text
                             parts = line.split(' - ', 1) # Split only on the first occurrence of ' - '
                             if len(parts) == 2:
                                 timestamp_str, command_text = parts
@@ -1228,3 +1343,4 @@ if __name__ == '__main__':
         print(f"Critical error occurred: {e}")
         speak("I encountered a critical error and need to shut down. Please check the logs.")
         os._exit(1)
+

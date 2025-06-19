@@ -440,3 +440,988 @@ Click 'No' to remove metadata.
 2025-06-12 13:26:01,525 - shree - INFO - Processing command: open file manager
 2025-06-12 13:26:01,544 - shree - INFO - Speaking: I didn't understand that command. Please try again.
 2025-06-12 13:26:07,261 - shree - INFO - Worker task finished.
+2025-06-12 13:42:53,982 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 13:43:10,405 - shree - INFO - Processing command: uninstall wireshark
+2025-06-12 13:43:10,406 - shree - INFO - Speaking: Uninstalling Wireshark now.
+2025-06-12 13:43:13,351 - shree - INFO - Requesting UI confirmation for metadata clearance.
+2025-06-12 13:43:13,352 - shree - INFO - Showing confirmation dialog: Would you like to KEEP associated configuration files and metadata for this application?
+
+Click 'Yes' to keep metadata.
+Click 'No' to remove metadata.
+2025-06-12 13:43:17,752 - shree - INFO - User chose: No (for keeping metadata). Emitting result: yes
+2025-06-12 13:49:40,324 - shree - INFO - UI confirmation result: yes
+2025-06-12 13:49:40,325 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 13:49:40,330 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh uninstall wireshark yes
+2025-06-12 13:50:14,795 - shree - INFO - Speaking: Wireshark has been uninstalled successfully, and its associated metadata was removed.
+2025-06-12 13:50:22,429 - shree - INFO - Worker task finished.
+2025-06-12 13:50:26,762 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 16:26:46,334 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 16:26:58,370 - shree - INFO - Speaking: Please tell me the URL of the image you want to view, or type it in the input box.
+2025-06-12 16:27:27,873 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 16:30:32,129 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 16:31:14,956 - shree - INFO - Processing command: install wireshark
+2025-06-12 16:31:14,959 - shree - INFO - Speaking: Installing Wireshark now.
+2025-06-12 16:31:18,039 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 16:31:18,045 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install wireshark
+2025-06-12 16:32:55,221 - shree - INFO - Speaking: Wireshark has been installed successfully.
+2025-06-12 16:32:59,629 - shree - INFO - Speaking: Remember to log out and log back in for group changes to take effect and to capture packets without sudo.
+2025-06-12 16:33:08,994 - shree - INFO - Worker task finished.
+2025-06-12 16:33:27,264 - shree - INFO - Processing command: uninstall wireshark
+2025-06-12 16:33:27,291 - shree - INFO - Speaking: Uninstalling Wireshark now.
+2025-06-12 16:33:30,434 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-12 16:33:30,439 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh uninstall wireshark yes
+2025-06-12 16:33:52,746 - shree - INFO - Speaking: Wireshark has been uninstalled successfully, and its associated metadata was removed.
+2025-06-12 16:34:00,706 - shree - INFO - Worker task finished.
+2025-06-12 16:58:20,772 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 17:15:01,897 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 17:15:17,907 - shree - INFO - Speaking: Theme changed to Green Matrix.
+2025-06-12 17:15:27,639 - shree - INFO - Speaking: Theme changed to Deep Blue Cyber.
+2025-06-12 17:15:34,988 - shree - INFO - Speaking: Theme changed to Default.
+2025-06-12 17:16:44,735 - shree - INFO - Processing command: open youtube
+2025-06-12 17:16:44,738 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-12 17:17:02,770 - shree - INFO - Attempting to open YouTube with query: 'mobile' at: https://www.youtube.com/results?search_query=mobile
+2025-06-12 17:17:02,809 - shree - INFO - Speaking: YouTube with query: 'mobile' has been opened.
+2025-06-12 17:17:07,691 - shree - INFO - Worker task finished.
+2025-06-12 17:17:17,601 - shree - INFO - Could not understand audio
+2025-06-12 17:17:17,608 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 17:17:23,108 - shree - INFO - Worker task finished.
+2025-06-12 17:17:31,541 - shree - INFO - Processing command: open wikipedia
+2025-06-12 17:17:31,544 - shree - INFO - Speaking: What would you like to search for on Wikipedia?
+2025-06-12 17:17:53,347 - shree - INFO - Attempting to open Wikipedia with query: 'ratangarh' at: https://en.wikipedia.org/wiki/Special:Search?search=ratangarh
+2025-06-12 17:17:53,350 - shree - INFO - Speaking: Wikipedia with query: 'ratangarh' has been opened.
+2025-06-12 17:17:58,850 - shree - INFO - Worker task finished.
+2025-06-12 17:22:48,325 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 17:23:45,650 - shree - INFO - Speaking: Theme changed to Purple Haze.
+2025-06-12 17:23:56,513 - shree - INFO - Speaking: Theme changed to Green Matrix.
+2025-06-12 17:24:14,116 - shree - INFO - Speaking: Theme changed to Default.
+2025-06-12 17:29:19,404 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 17:29:49,528 - shree - INFO - Speaking: Theme changed to Forest Deep.
+2025-06-12 17:29:59,965 - shree - INFO - Speaking: Theme changed to Sunset Glow.
+2025-06-12 17:30:07,731 - shree - INFO - Speaking: Theme changed to Purple Haze.
+2025-06-12 17:30:14,731 - shree - INFO - Speaking: Theme changed to Solarized Dark.
+2025-06-12 17:30:22,992 - shree - INFO - Speaking: Theme changed to Default.
+2025-06-12 17:41:44,168 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 17:42:26,806 - shree - INFO - Could not understand audio
+2025-06-12 17:42:26,810 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 17:42:30,850 - shree - INFO - Worker task finished.
+2025-06-12 17:42:44,527 - shree - INFO - Processing command: open settings
+2025-06-12 17:42:44,530 - shree - INFO - Attempting to open system application: settings (executable: gnome-control-center)
+2025-06-12 17:42:44,532 - shree - INFO - Speaking: settings has been opened.
+2025-06-12 17:42:47,415 - shree - INFO - Worker task finished.
+2025-06-12 17:42:51,581 - shree - INFO - Could not understand audio
+2025-06-12 17:42:51,591 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 17:42:55,991 - shree - INFO - Worker task finished.
+2025-06-12 17:43:09,820 - shree - INFO - Processing command: open file manager
+2025-06-12 17:43:09,822 - shree - INFO - Attempting to open system application: file manager (executable: nautilus)
+2025-06-12 17:43:09,825 - shree - INFO - Speaking: file manager has been opened.
+2025-06-12 17:43:13,242 - shree - INFO - Worker task finished.
+2025-06-12 17:43:24,265 - shree - INFO - Processing command: close file manager
+2025-06-12 17:43:24,277 - shree - INFO - Attempting to close system application: file manager (executable: nautilus)
+2025-06-12 17:43:24,313 - shree - INFO - Speaking: file manager has been closed.
+2025-06-12 17:43:27,894 - shree - INFO - Worker task finished.
+2025-06-12 17:44:16,382 - shree - INFO - Processing command: open terminal
+2025-06-12 17:44:16,385 - shree - INFO - Attempting to open system application: terminal (executable: gnome-terminal)
+2025-06-12 17:44:16,417 - shree - INFO - Speaking: terminal has been opened.
+2025-06-12 17:44:19,265 - shree - INFO - Worker task finished.
+2025-06-12 17:54:09,350 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 17:54:24,034 - shree - INFO - Processing command: open settings
+2025-06-12 17:54:24,036 - shree - INFO - Attempting to open system application: settings (executable: gnome-control-center)
+2025-06-12 17:54:24,037 - shree - INFO - Speaking: settings has been opened.
+2025-06-12 17:54:27,035 - shree - INFO - Worker task finished.
+2025-06-12 17:54:53,503 - shree - INFO - Processing command: open terminal
+2025-06-12 17:54:53,506 - shree - INFO - Attempting to open system application: terminal (executable: gnome-terminal)
+2025-06-12 17:54:53,508 - shree - INFO - Speaking: terminal has been opened.
+2025-06-12 17:54:56,213 - shree - INFO - Worker task finished.
+2025-06-12 17:55:33,567 - shree - INFO - Processing command: open calender
+2025-06-12 17:55:33,569 - shree - INFO - Speaking: Sorry, I don't know how to open 'calender'. Please provide a more specific name or check for alternatives.
+2025-06-12 17:55:43,529 - shree - INFO - Worker task finished.
+2025-06-12 17:55:55,787 - shree - INFO - Processing command: open genome control centre
+2025-06-12 17:55:55,790 - shree - INFO - Speaking: Sorry, I don't know how to open 'genome control centre'. Please provide a more specific name or check for alternatives.
+2025-06-12 17:56:07,193 - shree - INFO - Worker task finished.
+2025-06-12 17:56:18,113 - shree - INFO - Processing command: open reddit
+2025-06-12 17:56:18,116 - shree - INFO - Speaking: Sorry, I don't know how to open 'reddit'. Please provide a more specific name or check for alternatives.
+2025-06-12 17:56:28,648 - shree - INFO - Worker task finished.
+2025-06-12 17:56:44,027 - shree - INFO - Processing command: open gnome-control-center
+2025-06-12 17:56:44,037 - shree - INFO - Speaking: Sorry, I don't know how to open 'gnome-control-center'. Please provide a more specific name or check for alternatives.
+2025-06-12 17:56:54,826 - shree - INFO - Worker task finished.
+2025-06-12 17:57:08,601 - shree - INFO - Processing command: open system settings
+2025-06-12 17:57:08,605 - shree - INFO - Attempting to open system application: system settings (executable: gnome-control-center)
+2025-06-12 17:57:08,610 - shree - INFO - Speaking: system settings has been opened.
+2025-06-12 17:57:12,213 - shree - INFO - Worker task finished.
+2025-06-12 17:57:33,586 - shree - INFO - Processing command: open calculator
+2025-06-12 17:57:33,590 - shree - INFO - Attempting to open system application: calculator (executable: gnome-calculator)
+2025-06-12 17:57:33,595 - shree - INFO - Speaking: calculator has been opened.
+2025-06-12 17:57:36,744 - shree - INFO - Worker task finished.
+2025-06-12 17:57:42,702 - shree - INFO - Processing command: close calculator
+2025-06-12 17:57:42,707 - shree - INFO - Attempting to close system application: calculator (executable: gnome-calculator)
+2025-06-12 17:57:42,749 - shree - INFO - Speaking: calculator has been closed.
+2025-06-12 17:57:46,035 - shree - INFO - Worker task finished.
+2025-06-12 17:57:50,686 - shree - INFO - Processing command: open documents
+2025-06-12 17:57:50,691 - shree - INFO - Attempting to open system application: documents (executable: evince)
+2025-06-12 17:57:50,699 - shree - INFO - Speaking: documents has been opened.
+2025-06-12 17:57:54,141 - shree - INFO - Worker task finished.
+2025-06-12 17:57:59,083 - shree - INFO - Processing command: close documents
+2025-06-12 17:57:59,088 - shree - INFO - Attempting to close system application: documents (executable: evince)
+2025-06-12 17:57:59,125 - shree - INFO - Speaking: documents has been closed.
+2025-06-12 17:58:02,742 - shree - INFO - Worker task finished.
+2025-06-12 17:58:23,865 - shree - INFO - Processing command: close documents
+2025-06-12 17:58:23,871 - shree - INFO - Attempting to close system application: documents (executable: evince)
+2025-06-12 17:58:23,907 - shree - INFO - Speaking: It seems documents is not currently running, or I couldn't find it.
+2025-06-12 17:58:30,243 - shree - INFO - pkill for documents returned no matching processes.
+2025-06-12 17:58:30,244 - shree - INFO - Worker task finished.
+2025-06-12 17:58:49,465 - shree - INFO - Processing command: open software centre
+2025-06-12 17:58:49,472 - shree - INFO - Speaking: Sorry, I don't know how to open 'software centre'. Please provide a more specific name or check for alternatives.
+2025-06-12 17:58:59,974 - shree - INFO - Worker task finished.
+2025-06-12 17:59:16,207 - shree - INFO - Processing command: open image viewer
+2025-06-12 17:59:16,212 - shree - INFO - Attempting to open system application: image viewer (executable: eog)
+2025-06-12 17:59:16,224 - shree - INFO - Speaking: image viewer has been opened.
+2025-06-12 17:59:19,606 - shree - INFO - Worker task finished.
+2025-06-12 17:59:33,308 - shree - INFO - Processing command: open libreoffice writer
+2025-06-12 17:59:33,329 - shree - INFO - Speaking: Sorry, I don't know how to open 'libreoffice writer'. Please provide a more specific name or check for alternatives.
+2025-06-12 17:59:44,129 - shree - INFO - Worker task finished.
+2025-06-12 18:00:00,842 - shree - INFO - Processing command: open google
+2025-06-12 18:00:00,849 - shree - INFO - Speaking: Sorry, I don't know how to open 'google'. Please provide a more specific name or check for alternatives.
+2025-06-12 18:00:10,835 - shree - INFO - Worker task finished.
+2025-06-12 18:00:20,298 - shree - INFO - Processing command: open wikipedia
+2025-06-12 18:00:20,305 - shree - INFO - Speaking: Sorry, I don't know how to open 'wikipedia'. Please provide a more specific name or check for alternatives.
+2025-06-12 18:00:30,334 - shree - INFO - Worker task finished.
+2025-06-12 18:00:47,886 - shree - INFO - Could not understand audio
+2025-06-12 18:00:47,894 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-12 18:00:51,860 - shree - INFO - Worker task finished.
+2025-06-12 18:06:08,667 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 18:06:23,309 - shree - INFO - Processing command: open google
+2025-06-12 18:06:23,312 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-12 18:06:41,372 - shree - INFO - Attempting to open Google with query: 'mobile' at: https://www.google.com/search?q=mobile
+2025-06-12 18:06:41,397 - shree - INFO - Speaking: Google with query: 'mobile' has been opened.
+2025-06-12 18:06:46,189 - shree - INFO - Worker task finished.
+2025-06-12 18:28:40,944 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 18:29:45,761 - shree - INFO - Speaking: Theme changed to Green Matrix.
+2025-06-12 18:44:35,778 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-12 18:45:00,467 - shree - INFO - Processing command: spread out file manager
+2025-06-12 18:45:00,470 - shree - INFO - Speaking: Spreading out file manager for you.
+2025-06-12 18:45:04,333 - shree - INFO - Attempting to open system application: file manager (executable: nautilus)
+2025-06-12 18:45:04,340 - shree - INFO - Speaking: file manager has been opened.
+2025-06-12 18:45:08,045 - shree - INFO - Worker task finished.
+2025-06-12 18:45:27,811 - shree - INFO - Processing command: spread out settings
+2025-06-12 18:45:27,814 - shree - INFO - Speaking: Spreading out settings for you.
+2025-06-12 18:45:31,260 - shree - INFO - Attempting to open system application: settings (executable: gnome-control-center)
+2025-06-12 18:45:31,266 - shree - INFO - Speaking: settings has been opened.
+2025-06-12 18:45:34,374 - shree - INFO - Worker task finished.
+2025-06-12 18:45:56,584 - shree - INFO - Processing command: spread out terminal
+2025-06-12 18:45:56,586 - shree - INFO - Speaking: Spreading out terminal for you.
+2025-06-12 18:45:59,925 - shree - INFO - Attempting to open system application: terminal (executable: gnome-terminal)
+2025-06-12 18:45:59,933 - shree - INFO - Speaking: terminal has been opened.
+2025-06-12 18:46:02,912 - shree - INFO - Worker task finished.
+2025-06-13 10:51:01,369 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 10:51:01,375 - shree - ERROR - Error in speak function: Failed to connect. Probable cause: Unknown
+2025-06-13 10:52:01,563 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 10:52:01,569 - shree - ERROR - Error in speak function: Failed to connect. Probable cause: Unknown
+2025-06-13 10:52:16,754 - shree - ERROR - Google Speech Recognition service error: recognition connection failed: [Errno -2] Name or service not known
+2025-06-13 10:52:16,755 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-13 10:52:16,758 - shree - ERROR - Error in speak function: Failed to connect. Probable cause: Unknown
+2025-06-13 10:52:16,761 - shree - INFO - Worker task finished.
+2025-06-13 10:52:43,617 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 10:53:00,206 - shree - INFO - Timeout occurred while listening
+2025-06-13 10:53:00,207 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-13 10:53:04,419 - shree - INFO - Worker task finished.
+2025-06-13 10:53:29,108 - shree - INFO - Speaking: Theme changed to Deep Blue Cyber.
+2025-06-13 10:53:37,861 - shree - INFO - Speaking: Theme changed to Sunset Glow.
+2025-06-13 10:53:58,233 - shree - INFO - Processing command: open youtube
+2025-06-13 10:53:58,235 - shree - INFO - Speaking: Sorry, I don't know how to open 'youtube'. Please provide a more specific name or check for alternatives.
+2025-06-13 10:54:09,295 - shree - INFO - Worker task finished.
+2025-06-13 10:54:58,831 - shree - INFO - Processing command: open youtube
+2025-06-13 10:54:58,833 - shree - INFO - Speaking: Sorry, I don't know how to open 'youtube'. Please provide a more specific name or check for alternatives.
+2025-06-13 10:55:11,447 - shree - INFO - Worker task finished.
+2025-06-13 10:55:49,751 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 10:56:33,814 - shree - INFO - Processing command: open youtube
+2025-06-13 10:56:33,815 - shree - INFO - Speaking: Sorry, I don't know how to open 'youtube'. Please provide a more specific name or check for alternatives.
+2025-06-13 10:56:44,892 - shree - INFO - Worker task finished.
+2025-06-13 10:57:13,614 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 10:58:03,860 - shree - INFO - Processing command: open youtube
+2025-06-13 10:58:03,861 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-13 10:58:19,639 - shree - INFO - Attempting to open YouTube with query: 'shivaji maharaj' at: https://www.youtube.com/results?search_query=shivaji+maharaj
+2025-06-13 10:58:19,694 - shree - INFO - Speaking: YouTube with query: 'shivaji maharaj' has been opened.
+2025-06-13 10:58:26,570 - shree - INFO - Worker task finished.
+2025-06-13 10:59:06,433 - shree - INFO - Processing command: install git
+2025-06-13 10:59:06,436 - shree - INFO - Speaking: Installing Git now.
+2025-06-13 10:59:10,064 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-13 10:59:10,066 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-13 10:59:47,624 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-13 10:59:52,775 - shree - INFO - Worker task finished.
+2025-06-13 11:00:42,510 - shree - INFO - Processing command: show ssh key
+2025-06-13 11:00:42,517 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/git_utils.sh
+2025-06-13 11:00:42,519 - shree - INFO - Executing: bash /home/danav/Documents/Shree/git_utils.sh display_ssh
+2025-06-13 11:00:47,869 - shree - INFO - Worker task finished.
+2025-06-13 11:04:29,538 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 11:04:51,516 - shree - INFO - Processing command: open calculator
+2025-06-13 11:04:51,517 - shree - INFO - Attempting to open system application: calculator (executable: gnome-calculator)
+2025-06-13 11:04:51,519 - shree - INFO - Speaking: calculator has been opened.
+2025-06-13 11:04:55,944 - shree - INFO - Worker task finished.
+2025-06-13 11:05:17,528 - shree - INFO - Processing command: close calculator
+2025-06-13 11:05:17,530 - shree - INFO - Attempting to close system application: calculator (executable: gnome-calculator)
+2025-06-13 11:05:17,577 - shree - INFO - Speaking: calculator has been closed.
+2025-06-13 11:05:20,858 - shree - INFO - Worker task finished.
+2025-06-13 11:05:33,711 - shree - INFO - Could not understand audio
+2025-06-13 11:05:33,714 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-13 11:05:38,029 - shree - INFO - Worker task finished.
+2025-06-13 11:17:39,742 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 11:18:08,625 - shree - INFO - Processing command: open google install
+2025-06-13 11:18:08,626 - shree - INFO - Speaking: Sorry, I don't know how to open 'google install'. Please provide a more specific name or check for alternatives.
+2025-06-13 11:18:20,929 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 11:19:19,006 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 11:19:33,348 - shree - INFO - Processing command: install git
+2025-06-13 11:19:33,349 - shree - INFO - Speaking: Installing Git now.
+2025-06-13 11:19:36,762 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-13 11:19:36,765 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-13 11:20:07,781 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-13 11:20:12,293 - shree - INFO - Worker task finished.
+2025-06-13 11:21:28,373 - shree - INFO - Speaking: Theme changed to Deep Blue Cyber.
+2025-06-13 11:21:51,333 - shree - INFO - Processing command: uninstall git
+2025-06-13 11:21:51,338 - shree - INFO - Speaking: Uninstalling Git now.
+2025-06-13 11:21:54,676 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-13 11:21:54,678 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh uninstall git yes
+2025-06-13 11:22:08,031 - shree - INFO - Speaking: Git has been uninstalled successfully, and its associated metadata was removed.
+2025-06-13 11:22:16,017 - shree - INFO - Worker task finished.
+2025-06-13 11:28:28,004 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 11:28:42,424 - shree - INFO - Processing command: open youtube
+2025-06-13 11:28:42,424 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-13 11:28:52,155 - shree - INFO - Attempting to open YouTube with query: 'shivaji maharaj' at: https://www.youtube.com/results?search_query=shivaji+maharaj
+2025-06-13 11:28:52,185 - shree - INFO - Speaking: YouTube with query: 'shivaji maharaj' has been opened.
+2025-06-13 11:28:57,840 - shree - INFO - Worker task finished.
+2025-06-13 11:29:07,981 - shree - INFO - Processing command: open google
+2025-06-13 11:29:07,983 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-13 11:29:07,986 - shree - INFO - Speaking: Google has been opened.
+2025-06-13 11:29:10,618 - shree - INFO - Worker task finished.
+2025-06-13 11:29:17,960 - shree - INFO - Processing command: website
+2025-06-13 11:29:17,962 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-13 11:29:23,188 - shree - INFO - Worker task finished.
+2025-06-13 11:30:55,437 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 11:31:09,779 - shree - INFO - Processing command: install android studio
+2025-06-13 11:31:09,780 - shree - INFO - Speaking: Installing Android Studio now.
+2025-06-13 11:31:13,424 - shree - INFO - Speaking: This will download a large file and may take a while.
+2025-06-13 11:31:18,245 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-13 11:31:18,251 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install android_studio
+2025-06-13 11:31:35,607 - shree - INFO - Speaking: Android Studio installation process completed. Remember to log out and log back in for KVM group changes to take effect.
+2025-06-13 11:31:47,168 - shree - INFO - Worker task finished.
+2025-06-13 11:32:04,667 - shree - INFO - Processing command: uninstall android studio
+2025-06-13 11:32:04,675 - shree - INFO - Speaking: Uninstalling Android Studio now.
+2025-06-13 11:32:08,671 - shree - INFO - Requesting UI confirmation for metadata clearance.
+2025-06-13 11:32:08,672 - shree - INFO - Showing confirmation dialog: Would you like to KEEP associated configuration files and metadata for this application?
+
+Click 'Yes' to keep metadata.
+Click 'No' to remove metadata.
+2025-06-13 11:32:11,884 - shree - INFO - User chose: Yes (for keeping metadata). Emitting result: no
+2025-06-13 11:32:27,544 - shree - INFO - UI confirmation result: yes
+2025-06-13 11:32:27,545 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-13 11:32:27,550 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh uninstall android_studio yes
+2025-06-13 11:32:40,125 - shree - INFO - Speaking: Android Studio has been uninstalled successfully, and its associated metadata was removed.
+2025-06-13 11:32:48,483 - shree - INFO - Worker task finished.
+2025-06-13 11:33:04,586 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-13 11:33:21,158 - shree - INFO - Processing command: install git tumi gate
+2025-06-13 11:33:21,159 - shree - INFO - Speaking: Installing Git now.
+2025-06-13 11:33:24,603 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-13 11:33:24,610 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-13 11:33:41,357 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-13 11:33:45,594 - shree - INFO - Worker task finished.
+2025-06-13 11:34:07,645 - shree - INFO - Could not understand audio
+2025-06-13 11:34:07,660 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-13 11:34:11,889 - shree - INFO - Worker task finished.
+2025-06-13 11:34:20,250 - shree - INFO - Processing command: show ssh key
+2025-06-13 11:34:20,258 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/git_utils.sh
+2025-06-13 11:34:20,259 - shree - INFO - Executing: bash /home/danav/Documents/Shree/git_utils.sh display_ssh
+2025-06-13 11:34:25,579 - shree - INFO - Worker task finished.
+2025-06-13 11:34:49,423 - shree - INFO - Could not understand audio
+2025-06-13 11:34:49,454 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-13 11:34:53,719 - shree - INFO - Worker task finished.
+2025-06-13 11:34:58,959 - shree - INFO - Processing command: generate ssh ki
+2025-06-13 11:34:58,968 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-13 11:35:04,414 - shree - INFO - Worker task finished.
+2025-06-13 11:35:09,506 - shree - INFO - Processing command: generate ssh key
+2025-06-13 11:35:09,515 - shree - INFO - Speaking: To generate an SSH key, I need your email address for the key comment.
+2025-06-13 11:35:37,113 - shree - INFO - Worker task finished.
+2025-06-18 12:13:41,750 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 12:15:32,340 - shree - INFO - Could not understand audio
+2025-06-18 12:15:32,342 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 12:15:36,098 - shree - INFO - Worker task finished.
+2025-06-18 12:16:01,732 - shree - INFO - Processing command: install android studio
+2025-06-18 12:16:01,734 - shree - INFO - Speaking: Installing Android Studio now.
+2025-06-18 12:16:04,669 - shree - INFO - Speaking: This will download a large file and may take a while.
+2025-06-18 12:16:08,735 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-18 12:16:08,736 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install android_studio
+2025-06-18 12:16:24,777 - shree - INFO - Speaking: Android Studio installation process completed. Remember to log out and log back in for KVM group changes to take effect.
+2025-06-18 12:16:35,112 - shree - INFO - Worker task finished.
+2025-06-18 12:17:18,769 - shree - INFO - Processing command: uninstall android studio
+2025-06-18 12:17:18,772 - shree - INFO - Speaking: Uninstalling Android Studio now.
+2025-06-18 12:17:21,834 - shree - INFO - Requesting UI confirmation for metadata clearance.
+2025-06-18 12:17:21,834 - shree - INFO - Showing confirmation dialog: Would you like to KEEP associated configuration files and metadata for this application?
+
+Click 'Yes' to keep metadata.
+Click 'No' to remove metadata.
+2025-06-18 12:17:24,171 - shree - INFO - User chose: Yes (for keeping metadata). Emitting result: no
+2025-06-18 12:17:30,022 - shree - INFO - UI confirmation result: yes
+2025-06-18 12:17:30,023 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-18 12:17:30,024 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh uninstall android_studio yes
+2025-06-18 12:17:42,184 - shree - INFO - Speaking: Android Studio has been uninstalled successfully, and its associated metadata was removed.
+2025-06-18 12:17:49,913 - shree - INFO - Worker task finished.
+2025-06-18 14:09:32,487 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 14:09:33,687 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:40:33,426 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 14:40:34,840 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:40:50,854 - shree - INFO - Processing command: open setting
+2025-06-18 14:40:50,855 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:40:51,796 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:40:51,798 - shree - INFO - Worker task finished.
+2025-06-18 14:41:06,931 - shree - INFO - Processing command: love status
+2025-06-18 14:41:06,932 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:41:07,454 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:41:07,457 - shree - INFO - Worker task finished.
+2025-06-18 14:41:31,465 - shree - INFO - Processing command: blouse cutting
+2025-06-18 14:41:31,468 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:41:32,347 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:41:32,350 - shree - INFO - Worker task finished.
+2025-06-18 14:41:43,080 - shree - INFO - Processing command: live cricket
+2025-06-18 14:41:43,083 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:41:43,812 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:41:43,815 - shree - INFO - Worker task finished.
+2025-06-18 14:42:21,944 - shree - INFO - Processing command: launch settings
+2025-06-18 14:42:21,950 - shree - INFO - Speaking: Opening settings.
+2025-06-18 14:42:27,334 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:42:27,338 - shree - INFO - Launched system application: settings (gnome-control-center)
+2025-06-18 14:42:27,338 - shree - INFO - Worker task finished.
+2025-06-18 14:42:46,931 - shree - INFO - Processing command: launch settings
+2025-06-18 14:42:46,935 - shree - INFO - Speaking: Opening settings.
+2025-06-18 14:42:49,172 - shree - INFO - Launched system application: settings (gnome-control-center)
+2025-06-18 14:42:49,172 - shree - INFO - Worker task finished.
+2025-06-18 14:43:20,872 - shree - INFO - Processing command: launch settings
+2025-06-18 14:43:20,876 - shree - INFO - Speaking: Opening settings.
+2025-06-18 14:43:22,830 - shree - INFO - Launched system application: settings (gnome-control-center)
+2025-06-18 14:43:22,830 - shree - INFO - Worker task finished.
+2025-06-18 14:43:46,391 - shree - INFO - Processing command: launch calculator
+2025-06-18 14:43:46,396 - shree - INFO - Speaking: Opening calculator.
+2025-06-18 14:43:48,601 - shree - INFO - Launched system application: calculator (gnome-calculator)
+2025-06-18 14:43:48,601 - shree - INFO - Worker task finished.
+2025-06-18 14:44:09,170 - shree - INFO - Processing command: shut calculator
+2025-06-18 14:44:09,203 - shree - INFO - Speaking: It seems calculator was not running.
+2025-06-18 14:44:12,862 - shree - INFO - Attempted to close calculator, but no process was found.
+2025-06-18 14:44:12,862 - shree - INFO - Worker task finished.
+2025-06-18 14:44:47,033 - shree - INFO - Processing command: launch file manager
+2025-06-18 14:44:47,039 - shree - INFO - Speaking: I don't know how to open the application named 'file manager'.
+2025-06-18 14:44:52,656 - shree - WARNING - Unknown system application requested: file manager
+2025-06-18 14:44:52,656 - shree - INFO - Worker task finished.
+2025-06-18 14:45:10,821 - shree - INFO - Processing command: launch file
+2025-06-18 14:45:10,826 - shree - INFO - Speaking: I don't know how to open the application named 'file'.
+2025-06-18 14:45:15,385 - shree - WARNING - Unknown system application requested: file
+2025-06-18 14:45:15,385 - shree - INFO - Worker task finished.
+2025-06-18 14:53:41,104 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 14:53:57,301 - shree - INFO - Could not understand audio
+2025-06-18 14:53:57,303 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 14:54:00,713 - shree - INFO - Worker task finished.
+2025-06-18 14:54:11,231 - shree - INFO - Processing command: love status
+2025-06-18 14:54:11,233 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:54:16,288 - shree - INFO - Worker task finished.
+2025-06-18 14:54:50,041 - shree - INFO - Processing command: wallpaper
+2025-06-18 14:54:50,043 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:54:50,674 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:54:50,677 - shree - INFO - Worker task finished.
+2025-06-18 14:55:09,190 - shree - INFO - Processing command: light fitting
+2025-06-18 14:55:09,193 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:55:09,925 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:55:09,928 - shree - INFO - Worker task finished.
+2025-06-18 14:55:18,715 - shree - INFO - Processing command: live cricket
+2025-06-18 14:55:18,719 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:55:20,161 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:55:20,164 - shree - INFO - Worker task finished.
+2025-06-18 14:55:29,262 - shree - INFO - Processing command: lock settings
+2025-06-18 14:55:29,267 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:55:29,619 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:55:29,623 - shree - INFO - Worker task finished.
+2025-06-18 14:55:37,555 - shree - INFO - Could not understand audio
+2025-06-18 14:55:37,560 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 14:55:38,598 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:55:38,603 - shree - INFO - Worker task finished.
+2025-06-18 14:55:50,943 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 14:55:51,509 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:56:21,294 - shree - INFO - Processing command: love photo
+2025-06-18 14:56:21,295 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:56:21,709 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:56:21,711 - shree - INFO - Worker task finished.
+2025-06-18 14:56:57,985 - shree - INFO - Processing command: launch settings
+2025-06-18 14:56:57,987 - shree - INFO - Speaking: Opening settings.
+2025-06-18 14:56:58,396 - shree - ERROR - Error playing audio with mpg123: Command '['mpg123', '-q', 'output.mp3']' died with <Signals.SIGSEGV: 11>.
+2025-06-18 14:56:58,399 - shree - INFO - Launched system application: settings (/usr/bin/gnome-control-center)
+2025-06-18 14:56:58,399 - shree - INFO - Worker task finished.
+2025-06-18 14:58:51,252 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 14:59:22,530 - shree - INFO - Could not understand audio
+2025-06-18 14:59:22,532 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 14:59:26,082 - shree - INFO - Worker task finished.
+2025-06-18 14:59:34,309 - shree - INFO - Processing command: light fitting
+2025-06-18 14:59:34,311 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:59:38,736 - shree - INFO - Worker task finished.
+2025-06-18 14:59:46,395 - shree - INFO - Processing command: love story
+2025-06-18 14:59:46,397 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 14:59:50,836 - shree - INFO - Worker task finished.
+2025-06-18 15:00:03,436 - shree - INFO - Processing command: launch settings
+2025-06-18 15:00:03,439 - shree - INFO - Speaking: Opening settings.
+2025-06-18 15:00:05,406 - shree - INFO - Launched system application: settings (/usr/bin/gnome-control-center)
+2025-06-18 15:00:05,406 - shree - INFO - Worker task finished.
+2025-06-18 15:00:18,107 - shree - INFO - Processing command: shut settings
+2025-06-18 15:00:18,137 - shree - INFO - Speaking: It seems settings was not running.
+2025-06-18 15:00:21,304 - shree - INFO - Attempted to close settings, but no process was found.
+2025-06-18 15:00:21,304 - shree - INFO - Worker task finished.
+2025-06-18 15:00:34,134 - shree - INFO - Processing command: launch settings
+2025-06-18 15:00:34,138 - shree - INFO - Speaking: Opening settings.
+2025-06-18 15:00:36,133 - shree - INFO - Launched system application: settings (/usr/bin/gnome-control-center)
+2025-06-18 15:00:36,134 - shree - INFO - Worker task finished.
+2025-06-18 15:04:20,338 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 15:04:37,931 - shree - INFO - Processing command: light setting
+2025-06-18 15:04:37,932 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 15:04:42,678 - shree - INFO - Worker task finished.
+2025-06-18 15:05:13,306 - shree - INFO - Processing command: launch settings
+2025-06-18 15:05:13,308 - shree - INFO - Speaking: Opening settings.
+2025-06-18 15:05:15,897 - shree - INFO - Launched system application: settings (/usr/bin/gnome-control-center)
+2025-06-18 15:05:15,897 - shree - INFO - Worker task finished.
+2025-06-18 15:06:42,347 - shree - INFO - Processing command: launch terminal
+2025-06-18 15:06:42,352 - shree - INFO - Speaking: Opening terminal.
+2025-06-18 15:06:44,326 - shree - INFO - Launched system application: terminal (/usr/bin/gnome-terminal)
+2025-06-18 15:06:44,326 - shree - INFO - Worker task finished.
+2025-06-18 15:06:55,905 - shree - INFO - Processing command: launch file manager
+2025-06-18 15:06:55,908 - shree - INFO - Speaking: Sorry, I could not find the application 'file manager'. It might not be installed, in your system's PATH, or the path is incorrect.
+2025-06-18 15:07:08,311 - shree - ERROR - Executable not found or not executable for app: file manager. Attempted path: None
+2025-06-18 15:07:08,311 - shree - INFO - Worker task finished.
+2025-06-18 15:07:19,074 - shree - INFO - Processing command: launch file
+2025-06-18 15:07:19,105 - shree - INFO - Speaking: Opening file.
+2025-06-18 15:07:21,305 - shree - INFO - Launched system application: file (/usr/bin/file)
+2025-06-18 15:07:21,305 - shree - INFO - Worker task finished.
+2025-06-18 15:10:54,095 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 15:11:09,431 - shree - INFO - Processing command: launch settings
+2025-06-18 15:11:09,494 - shree - INFO - Speaking: Failed to open 'settings'. The application returned an error (exit code 1). Details: Running gnome-control-center is only supported under GNOME and Unity, exiting
+2025-06-18 15:11:26,561 - shree - ERROR - Error launching settings (/usr/bin/gnome-control-center). Exit code: 1. Stderr: Running gnome-control-center is only supported under GNOME and Unity, exiting. Stdout: 
+2025-06-18 15:11:26,562 - shree - INFO - Worker task finished.
+2025-06-18 15:17:11,542 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 15:17:36,656 - shree - INFO - Processing command: launch settings
+2025-06-18 15:17:36,722 - shree - INFO - Speaking: Failed to open 'settings'. The application returned an error (exit code 1). Details: Running gnome-control-center is only supported under GNOME and Unity, exiting
+2025-06-18 15:17:53,332 - shree - ERROR - Error launching settings (/usr/bin/gnome-control-center). Exit code: 1. Stderr: Running gnome-control-center is only supported under GNOME and Unity, exiting. Stdout: 
+2025-06-18 15:17:53,333 - shree - INFO - Worker task finished.
+2025-06-18 15:39:05,404 - shree - INFO - Speaking: Hello! I am Shree, your enhanced voice assistant. How can I help you today?
+2025-06-18 15:39:48,546 - shree - INFO - Processing command: open google
+2025-06-18 15:39:48,549 - shree - INFO - Speaking: Sorry, I could not find any executable for 'google'. It might not be installed, in your system's PATH, or the path is incorrect.
+2025-06-18 15:40:01,414 - shree - ERROR - No executable found for app: google
+2025-06-18 15:40:01,417 - shree - INFO - Worker task finished.
+2025-06-18 15:40:21,627 - shree - INFO - Processing command: sarkari result
+2025-06-18 15:40:21,636 - shree - INFO - Speaking: I didn't understand that command. Please try again or say 'help' for available commands.
+2025-06-18 15:40:29,423 - shree - INFO - Worker task finished.
+2025-06-18 15:40:37,810 - shree - INFO - Processing command: setting
+2025-06-18 15:40:37,826 - shree - INFO - Speaking: I didn't understand that command. Please try again or say 'help' for available commands.
+2025-06-18 15:40:45,506 - shree - INFO - Worker task finished.
+2025-06-18 15:40:54,239 - shree - INFO - Processing command: launch settings
+2025-06-18 15:40:54,259 - shree - INFO - Launching system application: settings (/usr/bin/gnome-control-center)
+2025-06-18 15:40:54,759 - shree - INFO - Speaking: Failed to open 'settings'. Exit code: 1 Error: Running gnome-control-center is only supported under GNOME and Unity, exiting
+2025-06-18 15:41:07,175 - shree - ERROR - Error launching settings: Failed to open 'settings'. Exit code: 1 Error: Running gnome-control-center is only supported under GNOME and Unity, exiting
+2025-06-18 15:41:07,197 - shree - INFO - Worker task finished.
+2025-06-18 15:56:54,141 - shree - INFO - Speaking: Hello! I am Shree, your enhanced AI voice assistant. How can I help you today?
+2025-06-18 15:57:40,173 - shree - INFO - Processing: launch settings
+2025-06-18 15:57:40,173 - shree - INFO - Attempting to launch: 'settings' -> 'settings'
+2025-06-18 15:57:40,174 - shree - INFO - Launching: settings (/usr/bin/gnome-control-center)
+2025-06-18 15:57:40,674 - shree - INFO - Speaking: Failed to open settings.
+2025-06-18 15:58:03,880 - shree - INFO - Processing: open google
+2025-06-18 15:58:03,880 - shree - INFO - Opening Google at: https://www.google.com
+2025-06-18 15:58:05,408 - shree - INFO - Speaking: ✅ Opened Google.
+2025-06-18 15:59:34,724 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 15:59:54,025 - shree - INFO - Could not understand audio
+2025-06-18 15:59:54,026 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 15:59:57,405 - shree - INFO - Worker task finished.
+2025-06-18 16:00:06,523 - shree - INFO - Processing command: open google
+2025-06-18 16:00:06,525 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-18 16:00:06,574 - shree - INFO - Speaking: Google has been opened.
+2025-06-18 16:00:08,893 - shree - INFO - Worker task finished.
+2025-06-18 16:00:57,421 - shree - INFO - Processing command: open youtube
+2025-06-18 16:00:57,424 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-18 16:01:09,289 - shree - INFO - Could not understand audio
+2025-06-18 16:01:09,293 - shree - INFO - Speaking: No search query provided. Opening YouTube homepage.
+2025-06-18 16:01:14,262 - shree - INFO - Attempting to open YouTube at: https://www.youtube.com
+2025-06-18 16:01:14,266 - shree - INFO - Speaking: YouTube has been opened.
+2025-06-18 16:01:16,639 - shree - INFO - Worker task finished.
+2025-06-18 16:04:16,193 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:04:45,463 - shree - INFO - Processing command: open github
+2025-06-18 16:04:45,464 - shree - INFO - Speaking: What would you like to search for on GitHub?
+2025-06-18 16:04:56,214 - shree - INFO - Attempting to open GitHub with query: 'voice assistant' at: https://github.com/search?q=voice+assistant
+2025-06-18 16:04:56,236 - shree - INFO - Speaking: GitHub with query: 'voice assistant' has been opened.
+2025-06-18 16:05:01,712 - shree - INFO - Worker task finished.
+2025-06-18 16:06:18,650 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:06:34,603 - shree - INFO - Processing command: install geet
+2025-06-18 16:06:34,604 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:06:39,603 - shree - INFO - Worker task finished.
+2025-06-18 16:07:03,807 - shree - INFO - Processing command: install git
+2025-06-18 16:07:03,809 - shree - INFO - Speaking: Installing Git now.
+2025-06-18 16:07:06,897 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-18 16:07:06,899 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-18 16:07:24,876 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-18 16:07:28,960 - shree - INFO - Worker task finished.
+2025-06-18 16:07:58,698 - shree - INFO - Processing command: show ssh key
+2025-06-18 16:07:58,705 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/git_utils.sh
+2025-06-18 16:07:58,707 - shree - INFO - Executing: bash /home/danav/Documents/Shree/git_utils.sh display_ssh
+2025-06-18 16:08:04,050 - shree - INFO - Worker task finished.
+2025-06-18 16:16:33,735 - __main__ - INFO - Shree Assistant app controller integrated successfully
+2025-06-18 16:16:33,818 - __main__ - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:16:56,032 - __main__ - INFO - Processing command: launch settings
+2025-06-18 16:16:56,033 - __main__ - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:17:01,070 - __main__ - INFO - Worker task finished.
+2025-06-18 16:22:14,016 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:22:27,783 - shree - INFO - Processing command: 2.5
+2025-06-18 16:22:27,784 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:22:32,814 - shree - INFO - Worker task finished.
+2025-06-18 16:22:41,540 - shree - INFO - Timeout occurred while listening
+2025-06-18 16:22:41,542 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 16:22:44,992 - shree - INFO - Worker task finished.
+2025-06-18 16:22:52,939 - shree - INFO - Processing command: open google
+2025-06-18 16:22:52,942 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-18 16:23:02,711 - shree - INFO - Timeout occurred while listening
+2025-06-18 16:23:02,715 - shree - INFO - Speaking: No search query provided. Opening Google homepage.
+2025-06-18 16:23:07,565 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-18 16:23:07,628 - shree - INFO - Speaking: Google has been opened.
+2025-06-18 16:23:09,836 - shree - INFO - Worker task finished.
+2025-06-18 16:23:17,858 - shree - INFO - Could not understand audio
+2025-06-18 16:23:17,862 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 16:23:21,410 - shree - INFO - Worker task finished.
+2025-06-18 16:23:29,695 - shree - INFO - Timeout occurred while listening
+2025-06-18 16:23:29,699 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 16:23:33,010 - shree - INFO - Worker task finished.
+2025-06-18 16:24:18,205 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:24:33,429 - shree - INFO - Could not understand audio
+2025-06-18 16:24:33,431 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 16:24:36,712 - shree - INFO - Worker task finished.
+2025-06-18 16:24:46,847 - shree - INFO - Processing command: kumkum google
+2025-06-18 16:24:46,850 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:24:51,494 - shree - INFO - Worker task finished.
+2025-06-18 16:24:59,646 - shree - INFO - Processing command: open google
+2025-06-18 16:24:59,648 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-18 16:25:09,307 - shree - INFO - Timeout occurred while listening
+2025-06-18 16:25:09,312 - shree - INFO - Speaking: No search query provided. Opening Google homepage.
+2025-06-18 16:25:13,822 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-18 16:25:13,876 - shree - INFO - Speaking: Google has been opened.
+2025-06-18 16:25:16,083 - shree - INFO - Worker task finished.
+2025-06-18 16:28:33,370 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:28:48,246 - shree - INFO - Could not understand audio
+2025-06-18 16:28:48,248 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 16:28:51,697 - shree - INFO - Worker task finished.
+2025-06-18 16:28:58,690 - shree - INFO - Processing command: open google
+2025-06-18 16:28:58,692 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-18 16:29:09,240 - shree - INFO - Attempting to open Google with query: 'mobile' at: https://www.google.com/search?q=mobile
+2025-06-18 16:29:09,315 - shree - INFO - Speaking: Google with query: 'mobile' has been opened.
+2025-06-18 16:29:13,618 - shree - INFO - Worker task finished.
+2025-06-18 16:30:42,248 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:30:54,274 - shree - INFO - Could not understand audio
+2025-06-18 16:30:54,275 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 16:30:57,584 - shree - INFO - Worker task finished.
+2025-06-18 16:31:03,755 - shree - INFO - Could not understand audio
+2025-06-18 16:31:03,757 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 16:31:07,043 - shree - INFO - Worker task finished.
+2025-06-18 16:31:15,600 - shree - INFO - Could not understand audio
+2025-06-18 16:31:15,602 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-18 16:31:18,960 - shree - INFO - Worker task finished.
+2025-06-18 16:31:48,269 - shree - INFO - Processing command: ok google
+2025-06-18 16:31:48,272 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:31:53,304 - shree - INFO - Worker task finished.
+2025-06-18 16:31:59,534 - shree - INFO - Processing command: open serial
+2025-06-18 16:31:59,536 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:32:03,897 - shree - INFO - Worker task finished.
+2025-06-18 16:32:12,540 - shree - INFO - Processing command: ok google
+2025-06-18 16:32:12,543 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:32:16,967 - shree - INFO - Worker task finished.
+2025-06-18 16:32:21,756 - shree - INFO - Processing command: ok google
+2025-06-18 16:32:21,760 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:32:26,198 - shree - INFO - Worker task finished.
+2025-06-18 16:32:44,899 - shree - INFO - Processing command: ok google
+2025-06-18 16:32:44,902 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-18 16:32:49,354 - shree - INFO - Worker task finished.
+2025-06-18 16:33:16,431 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:33:35,073 - shree - INFO - Processing command: open google
+2025-06-18 16:33:35,074 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-18 16:33:41,835 - shree - INFO - Could not understand audio
+2025-06-18 16:33:41,837 - shree - INFO - Speaking: No search query provided. Opening Google homepage.
+2025-06-18 16:33:46,843 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-18 16:33:46,863 - shree - INFO - Speaking: Google has been opened.
+2025-06-18 16:33:50,000 - shree - INFO - Worker task finished.
+2025-06-18 16:34:04,566 - shree - INFO - Processing command: open google
+2025-06-18 16:34:04,568 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-18 16:34:11,317 - shree - INFO - Attempting to open Google with query: 'mobile' at: https://www.google.com/search?q=mobile
+2025-06-18 16:34:11,322 - shree - INFO - Speaking: Google with query: 'mobile' has been opened.
+2025-06-18 16:34:15,964 - shree - INFO - Worker task finished.
+2025-06-18 16:35:17,494 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:35:37,344 - shree - INFO - Received command: 'open file manager'
+2025-06-18 16:35:37,344 - shree - INFO - Speaking: Opening file manager now.
+2025-06-18 16:35:40,345 - shree - INFO - Opened system application: file manager (nautilus)
+2025-06-18 16:35:43,894 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:35:47,478 - shree - INFO - Received command: 'open'
+2025-06-18 16:35:47,478 - shree - INFO - Speaking: I didn't understand that command. Can you please try rephrasing?
+2025-06-18 16:35:53,285 - shree - INFO - Command not understood: 'open'
+2025-06-18 16:35:58,231 - shree - INFO - Received command: 'open google'
+2025-06-18 16:35:58,232 - shree - INFO - Processing open/search command: 'open google'
+2025-06-18 16:35:58,232 - shree - INFO - Speaking: You're opening google. Would you like to search for something specific on it? If so, tell me your search term. Otherwise, say 'no' or 'skip'.
+2025-06-18 16:36:19,039 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:36:19,040 - shree - INFO - Speaking: I didn't catch that. What would you like to search for, or say 'no'?
+2025-06-18 16:36:30,590 - shree - INFO - User wants to search for 'mobile' on google.
+2025-06-18 16:36:30,590 - shree - INFO - Speaking: Okay, searching for 'mobile' on google.
+2025-06-18 16:36:35,346 - shree - INFO - Successfully launched URL in browser: https://www.google.com/search?q=mobile
+2025-06-18 16:36:44,006 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:36:50,769 - shree - INFO - Received command: 'open'
+2025-06-18 16:36:50,769 - shree - INFO - Speaking: I didn't understand that command. Can you please try rephrasing?
+2025-06-18 16:36:56,563 - shree - INFO - Command not understood: 'open'
+2025-06-18 16:37:01,926 - shree - INFO - Received command: 'open settings'
+2025-06-18 16:37:01,926 - shree - INFO - Speaking: Opening settings now.
+2025-06-18 16:37:04,646 - shree - INFO - Opened system application: settings (gnome-control-center)
+2025-06-18 16:37:12,036 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:37:17,497 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:37:26,501 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:37:29,471 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:37:35,180 - shree - INFO - Timeout occurred while listening (no speech detected).
+2025-06-18 16:37:46,881 - shree - INFO - Received command: 'open clock'
+2025-06-18 16:37:46,881 - shree - INFO - Processing open/search command: 'open clock'
+2025-06-18 16:37:46,881 - shree - INFO - Speaking: I don't recognize 'clock' as a known website or a pre-configured system application.
+2025-06-18 16:37:55,096 - shree - INFO - Speaking: If it's an application, please ensure it's added to my system applications list with its correct command.
+2025-06-18 16:38:04,184 - shree - INFO - Command 'open clock' (app: 'clock') not matched to web or system apps.
+2025-06-18 16:38:12,992 - shree - INFO - Received command: 'open clock'
+2025-06-18 16:38:12,992 - shree - INFO - Processing open/search command: 'open clock'
+2025-06-18 16:38:12,993 - shree - INFO - Speaking: I don't recognize 'clock' as a known website or a pre-configured system application.
+2025-06-18 16:38:20,970 - shree - INFO - Speaking: If it's an application, please ensure it's added to my system applications list with its correct command.
+2025-06-18 16:38:30,073 - shree - INFO - Command 'open clock' (app: 'clock') not matched to web or system apps.
+2025-06-18 16:38:37,569 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:38:44,839 - shree - INFO - Received command: 'open clocks'
+2025-06-18 16:38:44,840 - shree - INFO - Processing open/search command: 'open clocks'
+2025-06-18 16:38:44,840 - shree - INFO - Speaking: I don't recognize 'clocks' as a known website or a pre-configured system application.
+2025-06-18 16:38:52,784 - shree - INFO - Speaking: If it's an application, please ensure it's added to my system applications list with its correct command.
+2025-06-18 16:39:01,914 - shree - INFO - Command 'open clocks' (app: 'clocks') not matched to web or system apps.
+2025-06-18 16:39:08,879 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:39:15,254 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:39:19,452 - shree - INFO - Received command: 'open calculator'
+2025-06-18 16:39:19,453 - shree - INFO - Speaking: Opening calculator now.
+2025-06-18 16:39:22,507 - shree - INFO - Opened system application: calculator (gnome-calculator)
+2025-06-18 16:39:29,795 - shree - INFO - Received command: 'close calculator'
+2025-06-18 16:39:29,795 - shree - INFO - Speaking: I cannot directly close graphical applications like 'calculator' gracefully.
+2025-06-18 16:39:36,839 - shree - INFO - Speaking: You will need to manually close it from your desktop environment.
+2025-06-18 16:39:41,916 - shree - INFO - Informed user about manual closure for graphical app: calculator
+2025-06-18 16:39:48,717 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:39:55,394 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:01,974 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:08,766 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:15,670 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:22,429 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:29,494 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:36,253 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:43,115 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:47,213 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:40:53,855 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:00,624 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:07,206 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:13,835 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:20,593 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:27,454 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:34,621 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:41,587 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:47,218 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:41:52,911 - shree - INFO - Timeout occurred while listening (no speech detected).
+2025-06-18 16:41:57,970 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:42:02,972 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:42:10,369 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:42:13,843 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:42:18,553 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:42:32,788 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:42:35,859 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:42:39,853 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:42:41,969 - shree - INFO - Speaking: Exiting now. Goodbye!
+2025-06-18 16:54:59,992 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:55:11,294 - shree - INFO - Received command: 'open settings'
+2025-06-18 16:55:11,294 - shree - INFO - Speaking: Opening settings now.
+2025-06-18 16:55:14,009 - shree - INFO - Opened system application: settings (gnome-control-center)
+2025-06-18 16:55:21,932 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:55:29,509 - shree - INFO - Received command: 'open settings'
+2025-06-18 16:55:29,509 - shree - INFO - Speaking: Opening settings now.
+2025-06-18 16:55:33,501 - shree - INFO - Opened system application: settings (gnome-control-center)
+2025-06-18 16:55:40,775 - shree - INFO - Received command: 'open genome control centre'
+2025-06-18 16:55:40,775 - shree - INFO - Processing open/search command: 'open genome control centre'
+2025-06-18 16:55:40,775 - shree - CRITICAL - A critical error occurred in the main loop: name 'app_to_open' is not defined
+Traceback (most recent call last):
+  File "/home/danav/Documents/Shree/Shree.py", line 827, in <module>
+    main()
+  File "/home/danav/Documents/Shree/Shree.py", line 774, in main
+    handle_open_command(query)
+  File "/home/danav/Documents/Shree/Shree.py", line 321, in handle_open_command
+    speak(f"I don't recognize '{app_to_open}' as a known website or a pre-configured system application.")
+                                ^^^^^^^^^^^
+NameError: name 'app_to_open' is not defined. Did you mean: 'app_name_to_open'?
+2025-06-18 16:55:46,323 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 16:55:57,874 - shree - INFO - Received command: 'genome control centre'
+2025-06-18 16:55:57,874 - shree - INFO - Speaking: I didn't understand that command. Can you please try rephrasing?
+2025-06-18 16:56:04,050 - shree - INFO - Command not understood: 'genome control centre'
+2025-06-18 16:56:09,548 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:56:18,458 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:56:22,965 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:56:34,432 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:56:39,141 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 16:56:50,714 - shree - INFO - Received command: 'open'
+2025-06-18 16:56:50,714 - shree - INFO - Speaking: I didn't understand that command. Can you please try rephrasing?
+2025-06-18 16:56:56,497 - shree - INFO - Command not understood: 'open'
+2025-06-18 16:57:03,514 - shree - INFO - Received command: 'open control centre'
+2025-06-18 16:57:03,514 - shree - INFO - Processing open/search command: 'open control centre'
+2025-06-18 16:57:03,514 - shree - CRITICAL - A critical error occurred in the main loop: name 'app_to_open' is not defined
+Traceback (most recent call last):
+  File "/home/danav/Documents/Shree/Shree.py", line 827, in <module>
+    main()
+  File "/home/danav/Documents/Shree/Shree.py", line 774, in main
+    handle_open_command(query)
+  File "/home/danav/Documents/Shree/Shree.py", line 321, in handle_open_command
+    speak(f"I don't recognize '{app_to_open}' as a known website or a pre-configured system application.")
+                                ^^^^^^^^^^^
+NameError: name 'app_to_open' is not defined. Did you mean: 'app_name_to_open'?
+2025-06-18 17:19:10,600 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 17:19:16,416 - shree - INFO - Speaking: Exiting now. Goodbye!
+2025-06-18 17:30:09,870 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 17:30:23,527 - shree - INFO - Speaking: Do you want to exit Shree completely, or keep me running in the background?
+2025-06-18 17:30:34,581 - shree - INFO - Speaking: I didn't quite catch that. Please say 'exit' or 'run in background'.
+2025-06-18 17:30:52,365 - shree - INFO - Speaking: Exiting now. Goodbye!
+2025-06-18 20:40:00,121 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 23:50:18,780 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-18 23:50:32,666 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 23:50:39,322 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 23:50:44,696 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 23:50:52,430 - shree - INFO - Received command: 'launch settings'
+2025-06-18 23:50:52,430 - shree - INFO - Speaking: I didn't understand that command. Can you please try rephrasing?
+2025-06-18 23:50:58,412 - shree - INFO - Command not understood: 'launch settings'
+2025-06-18 23:51:04,107 - shree - INFO - Received command: 'open settings'
+2025-06-18 23:51:04,108 - shree - INFO - Speaking: Opening settings now.
+2025-06-18 23:51:06,788 - shree - INFO - Opened system application: settings (gnome-control-center)
+2025-06-18 23:51:10,284 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 23:51:20,284 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 23:51:25,610 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 23:51:30,045 - shree - INFO - Received command: 'open file manager'
+2025-06-18 23:51:30,045 - shree - INFO - Speaking: Opening file manager now.
+2025-06-18 23:51:33,247 - shree - INFO - Opened system application: file manager (nautilus)
+2025-06-18 23:51:43,017 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-18 23:51:50,186 - shree - INFO - Received command: 'open terminal'
+2025-06-18 23:51:50,187 - shree - INFO - Speaking: Opening terminal now.
+2025-06-18 23:51:53,324 - shree - INFO - Opened system application: terminal (gnome-terminal)
+2025-06-18 23:51:58,070 - shree - INFO - Received command: 'open vs code'
+2025-06-18 23:51:58,070 - shree - INFO - Processing open/search command: 'open vs code'
+2025-06-18 23:51:58,071 - shree - INFO - Speaking: I don't recognize 'vs code' as a known website or a pre-configured system application.
+2025-06-18 23:52:06,292 - shree - INFO - Speaking: If it's an application, please ensure it's added to my system applications list with its correct command.
+2025-06-19 12:21:05,020 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 12:21:19,376 - shree - INFO - Received command: 'headphone'
+2025-06-19 12:21:19,376 - shree - INFO - Speaking: I didn't understand that command. Can you please try rephrasing?
+2025-06-19 12:21:25,288 - shree - INFO - Command not understood: 'headphone'
+2025-06-19 12:21:31,971 - shree - INFO - Received command: 'open youtube'
+2025-06-19 12:21:31,972 - shree - INFO - Processing open/search command: 'open youtube'
+2025-06-19 12:21:32,000 - shree - INFO - Speaking: You're opening youtube. Would you like to search for something specific on it? If so, tell me your search term. Otherwise, say 'no' or 'skip'.
+2025-06-19 12:21:55,023 - shree - INFO - User wants to search for 'sumit' on youtube.
+2025-06-19 12:21:55,023 - shree - INFO - Speaking: Okay, searching for 'sumit' on youtube.
+2025-06-19 12:22:00,173 - shree - INFO - Successfully launched URL in browser: https://www.youtube.com/results?search_query=sumit
+2025-06-19 12:22:06,830 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-19 12:22:13,444 - shree - INFO - Received command: 'close youtube'
+2025-06-19 12:22:13,444 - shree - INFO - Speaking: I didn't understand that command. Can you please try rephrasing?
+2025-06-19 12:22:19,352 - shree - INFO - Command not understood: 'close youtube'
+2025-06-19 12:22:25,986 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-19 12:22:32,696 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-19 12:22:39,557 - shree - INFO - Google Speech Recognition could not understand audio.
+2025-06-19 12:22:46,316 - shree - INFO - Received command: 'exit'
+2025-06-19 12:22:46,316 - shree - INFO - Speaking: Goodbye! Have a great day!
+2025-06-19 14:08:41,308 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 14:08:52,153 - shree - INFO - Processing command: open youtube
+2025-06-19 14:08:52,154 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-19 14:09:01,577 - shree - INFO - Timeout occurred while listening
+2025-06-19 14:09:01,580 - shree - INFO - Speaking: No search query provided. Opening YouTube homepage.
+2025-06-19 14:09:06,487 - shree - INFO - Attempting to open YouTube at: https://www.youtube.com
+2025-06-19 14:09:06,508 - shree - INFO - Speaking: YouTube has been opened.
+2025-06-19 14:09:09,004 - shree - INFO - Worker task finished.
+2025-06-19 14:09:18,160 - shree - INFO - Could not understand audio
+2025-06-19 14:09:18,163 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-19 14:09:21,761 - shree - INFO - Worker task finished.
+2025-06-19 14:10:41,520 - shree - INFO - Processing command: open youtube
+2025-06-19 14:10:41,523 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-19 14:10:53,603 - shree - INFO - Attempting to open YouTube with query: 'song' at: https://www.youtube.com/results?search_query=song
+2025-06-19 14:10:53,606 - shree - INFO - Speaking: YouTube with query: 'song' has been opened.
+2025-06-19 14:10:57,996 - shree - INFO - Worker task finished.
+2025-06-19 14:51:42,440 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 14:53:03,324 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 14:53:36,191 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 14:53:47,418 - shree - INFO - Copied 'launch <application name>' to clipboard.
+2025-06-19 16:50:56,851 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 16:51:11,446 - shree - INFO - Speaking: I have opened youtube. I'll remember this as 'Youtube Page'.
+2025-06-19 16:51:20,231 - shree - INFO - Could not understand audio
+2025-06-19 16:51:20,231 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
+2025-06-19 16:52:31,283 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 16:52:45,431 - shree - INFO - Could not understand audio
+2025-06-19 16:52:45,431 - shree - INFO - Speaking: I didn't understand your voice command. Please type your command, or say 'exit' to quit.
+2025-06-19 16:53:39,849 - shree - INFO - Speaking: Goodbye!
+2025-06-19 16:53:42,994 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 16:54:00,661 - shree - INFO - Processing command: open youtube
+2025-06-19 16:54:00,662 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-19 16:54:13,701 - shree - INFO - Could not understand audio
+2025-06-19 16:54:13,703 - shree - INFO - Speaking: No search query provided. Opening YouTube homepage.
+2025-06-19 16:54:19,107 - shree - INFO - Attempting to open YouTube at: https://www.youtube.com
+2025-06-19 16:54:19,128 - shree - INFO - Speaking: YouTube has been opened.
+2025-06-19 16:54:21,923 - shree - INFO - Worker task finished.
+2025-06-19 16:54:33,466 - shree - INFO - Processing command: open google
+2025-06-19 16:54:33,468 - shree - INFO - Attempting to open Google at: https://www.google.com
+2025-06-19 16:54:33,471 - shree - INFO - Speaking: Google has been opened.
+2025-06-19 16:54:36,804 - shree - INFO - Worker task finished.
+2025-06-19 16:54:48,725 - shree - INFO - Processing command: open github
+2025-06-19 16:54:48,727 - shree - INFO - Attempting to open GitHub at: https://github.com
+2025-06-19 16:54:48,731 - shree - INFO - Speaking: GitHub has been opened.
+2025-06-19 16:54:51,659 - shree - INFO - Worker task finished.
+2025-06-19 16:56:03,780 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 16:56:16,466 - shree - INFO - Processing command: open file manager
+2025-06-19 16:56:16,466 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 16:56:21,655 - shree - INFO - Worker task finished.
+2025-06-19 17:08:54,192 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 17:09:09,109 - shree - INFO - Processing command: youtube
+2025-06-19 17:09:09,110 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 17:09:15,204 - shree - INFO - Worker task finished.
+2025-06-19 17:09:29,794 - shree - INFO - Processing command: open youtube
+2025-06-19 17:09:29,796 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-19 17:09:36,551 - shree - INFO - Could not understand audio
+2025-06-19 17:09:36,554 - shree - INFO - Speaking: No search query provided. Opening YouTube homepage.
+2025-06-19 17:09:41,896 - shree - INFO - Attempting to open YouTube at: https://www.youtube.com
+2025-06-19 17:09:41,919 - shree - INFO - Speaking: YouTube has been opened.
+2025-06-19 17:09:44,627 - shree - INFO - Worker task finished.
+2025-06-19 17:10:40,454 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 17:10:56,425 - shree - INFO - Processing command: open youtube
+2025-06-19 17:10:56,426 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-19 17:11:03,688 - shree - INFO - Attempting to open YouTube with query: 'mobile' at: https://www.youtube.com/results?search_query=mobile
+2025-06-19 17:11:03,708 - shree - INFO - Speaking: YouTube with query: 'mobile' has been opened.
+2025-06-19 17:11:08,582 - shree - INFO - Worker task finished.
+2025-06-19 17:24:05,197 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 17:24:48,249 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 17:29:04,050 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 17:29:21,652 - shree - INFO - Processing command: open file manager
+2025-06-19 17:29:21,654 - shree - INFO - Speaking: nautilus has been opened.
+2025-06-19 17:29:24,467 - shree - INFO - Worker task finished.
+2025-06-19 17:29:42,136 - shree - INFO - Processing command: file manager
+2025-06-19 17:29:42,138 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 17:29:47,309 - shree - INFO - Worker task finished.
+2025-06-19 17:29:55,034 - shree - INFO - Processing command: open settings
+2025-06-19 17:29:55,038 - shree - INFO - Speaking: gnome-control-center has been opened.
+2025-06-19 17:29:58,819 - shree - INFO - Worker task finished.
+2025-06-19 17:30:11,115 - shree - INFO - Processing command: open terminal
+2025-06-19 17:30:11,144 - shree - INFO - Speaking: gnome-terminal has been opened.
+2025-06-19 17:30:14,520 - shree - INFO - Worker task finished.
+2025-06-19 17:30:21,793 - shree - INFO - Processing command: open
+2025-06-19 17:30:21,796 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 17:30:27,046 - shree - INFO - Worker task finished.
+2025-06-19 17:30:34,461 - shree - INFO - Processing command: open calculator
+2025-06-19 17:30:34,489 - shree - INFO - Speaking: gnome-calculator has been opened.
+2025-06-19 17:30:38,157 - shree - INFO - Worker task finished.
+2025-06-19 17:30:54,283 - shree - INFO - Processing command: calendar
+2025-06-19 17:30:54,288 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 17:30:59,391 - shree - INFO - Worker task finished.
+2025-06-19 17:31:31,691 - shree - INFO - Processing command: open software centre
+2025-06-19 17:31:31,692 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 17:31:36,671 - shree - INFO - Worker task finished.
+2025-06-19 17:32:00,989 - shree - INFO - Processing command: open software updater
+2025-06-19 17:32:00,995 - shree - INFO - Speaking: update-manager has been opened.
+2025-06-19 17:32:04,471 - shree - INFO - Worker task finished.
+2025-06-19 17:32:15,735 - shree - INFO - Could not understand audio
+2025-06-19 17:32:15,740 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-19 17:32:19,643 - shree - INFO - Worker task finished.
+2025-06-19 17:32:25,057 - shree - INFO - Processing command: exit
+2025-06-19 17:32:25,063 - shree - INFO - Speaking: Goodbye! Have a nice day!
+2025-06-19 17:32:28,957 - shree - INFO - Worker task finished.
+2025-06-19 17:53:01,825 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 17:53:16,821 - shree - INFO - Processing command: open settings open settings
+2025-06-19 17:53:16,891 - shree - ERROR - Error output from gnome-control-center: Running gnome-control-center is only supported under GNOME and Unity, exiting
+2025-06-19 17:53:16,891 - shree - INFO - Speaking: Failed to open gnome-control-center. (Exit code: 1). Check 'System Error' log.
+2025-06-19 17:53:25,420 - shree - INFO - Worker task finished.
+2025-06-19 17:53:32,999 - shree - INFO - Processing command: open terminal
+2025-06-19 17:53:33,105 - shree - ERROR - Error output from gnome-terminal: /usr/bin/gnome-terminal.real: symbol lookup error: /snap/core20/current/lib/x86_64-linux-gnu/libpthread.so.0: undefined symbol: __libc_pthread_init, version GLIBC_PRIVATE
+2025-06-19 17:53:33,105 - shree - INFO - Speaking: Failed to open gnome-terminal. (Exit code: 127). Check 'System Error' log.
+2025-06-19 17:53:41,719 - shree - INFO - Worker task finished.
+2025-06-19 17:53:54,299 - shree - INFO - Processing command: open file manager
+2025-06-19 17:53:59,309 - shree - WARNING - Timeout when trying to read stderr from nautilus. The app might still be launching.
+2025-06-19 17:53:59,309 - shree - INFO - Speaking: nautilus is attempting to open, but I timed out waiting for its initial output. Check your desktop.
+2025-06-19 17:54:07,897 - shree - INFO - Worker task finished.
+2025-06-19 17:59:20,910 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 17:59:38,582 - shree - INFO - Processing command: open sis setting
+2025-06-19 17:59:38,583 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 17:59:43,648 - shree - INFO - Worker task finished.
+2025-06-19 17:59:49,124 - shree - INFO - Processing command: open settings
+2025-06-19 17:59:49,193 - shree - ERROR - Error output from gnome-control-center: Running gnome-control-center is only supported under GNOME and Unity, exiting
+2025-06-19 17:59:49,193 - shree - INFO - Speaking: Failed to open gnome-control-center. (Exit code: 1). Check 'System Error' log.
+2025-06-19 17:59:57,613 - shree - INFO - Worker task finished.
+2025-06-19 18:00:44,593 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 18:01:01,522 - shree - INFO - Could not understand audio
+2025-06-19 18:01:01,524 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-19 18:01:04,980 - shree - INFO - Worker task finished.
+2025-06-19 18:01:15,347 - shree - INFO - Processing command: open photos
+2025-06-19 18:01:15,348 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 18:01:20,240 - shree - INFO - Worker task finished.
+2025-06-19 18:01:30,093 - shree - INFO - Processing command: open photo
+2025-06-19 18:01:30,096 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 18:01:35,248 - shree - INFO - Worker task finished.
+2025-06-19 18:01:41,244 - shree - INFO - Processing command: open settings
+2025-06-19 18:01:41,311 - shree - ERROR - Error output from gnome-control-center: Running gnome-control-center is only supported under GNOME and Unity, exiting
+2025-06-19 18:01:41,311 - shree - INFO - Speaking: Failed to open gnome-control-center. (Exit code: 1). Check 'System Error' log.
+2025-06-19 18:01:48,966 - shree - INFO - Worker task finished.
+2025-06-19 18:02:20,948 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 18:02:38,498 - shree - INFO - Processing command: open google
+2025-06-19 18:02:38,499 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-19 18:02:55,050 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 18:03:11,471 - shree - INFO - Processing command: open google
+2025-06-19 18:03:11,471 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-19 18:03:21,197 - shree - INFO - Attempting to open Google with query: 'mobile' at: https://www.google.com/search?q=mobile
+2025-06-19 18:03:21,222 - shree - INFO - Speaking: Google with query: 'mobile' has been opened.
+2025-06-19 18:03:26,000 - shree - INFO - Worker task finished.
+2025-06-19 18:05:14,558 - shree - INFO - Processing command: open youtube
+2025-06-19 18:05:14,561 - shree - INFO - Speaking: What would you like to search for on YouTube?
+2025-06-19 18:05:28,387 - shree - INFO - Attempting to open YouTube with query: 'shivaji maharaj' at: https://www.youtube.com/results?search_query=shivaji+maharaj
+2025-06-19 18:05:28,391 - shree - INFO - Speaking: YouTube with query: 'shivaji maharaj' has been opened.
+2025-06-19 18:05:33,928 - shree - INFO - Worker task finished.
+2025-06-19 18:05:57,578 - shree - INFO - Processing command: open settings
+2025-06-19 18:05:57,637 - shree - ERROR - Error output from gnome-control-center: Running gnome-control-center is only supported under GNOME and Unity, exiting
+2025-06-19 18:05:57,637 - shree - INFO - Speaking: Failed to open gnome-control-center. (Exit code: 1). Check 'System Error' log.
+2025-06-19 18:06:05,927 - shree - INFO - Worker task finished.
+2025-06-19 18:06:15,591 - shree - INFO - Processing command: install git
+2025-06-19 18:06:15,591 - shree - INFO - Speaking: Installing Git now.
+2025-06-19 18:06:18,784 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-19 18:06:18,785 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-19 18:06:35,880 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-19 18:06:39,825 - shree - INFO - Worker task finished.
+2025-06-19 18:06:51,844 - shree - INFO - Processing command: show ssh key
+2025-06-19 18:06:51,851 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/git_utils.sh
+2025-06-19 18:06:51,852 - shree - INFO - Executing: bash /home/danav/Documents/Shree/git_utils.sh display_ssh
+2025-06-19 18:06:57,175 - shree - INFO - Worker task finished.
+2025-06-19 18:07:11,611 - shree - INFO - Processing command: open file manager
+2025-06-19 18:07:16,616 - shree - WARNING - Timeout when trying to read stderr from nautilus. The app might still be launching.
+2025-06-19 18:07:16,617 - shree - INFO - Speaking: nautilus is attempting to open, but I timed out waiting for its initial output. Check your desktop.
+2025-06-19 18:17:07,118 - shree - INFO - Speaking: Hello! I am Shree, your voice assistant. How can I help you today?
+2025-06-19 18:17:22,741 - shree - INFO - Processing command: open file manager
+2025-06-19 18:17:27,749 - shree - WARNING - Timeout when trying to read stderr from nautilus. The app might still be launching.
+2025-06-19 18:17:27,749 - shree - INFO - Speaking: nautilus is attempting to open, but I timed out waiting for its initial output. Check your desktop.
+2025-06-19 18:17:36,191 - shree - INFO - Worker task finished.
+2025-06-19 18:17:46,497 - shree - INFO - Processing command: open google
+2025-06-19 18:17:46,499 - shree - INFO - Speaking: What would you like to search for on Google?
+2025-06-19 18:17:57,148 - shree - INFO - Attempting to open Google with query: 'horror movie' at: https://www.google.com/search?q=horror+movie
+2025-06-19 18:17:57,172 - shree - INFO - Speaking: Google with query: 'horror movie' has been opened.
+2025-06-19 18:18:02,628 - shree - INFO - Worker task finished.
+2025-06-19 18:18:11,588 - shree - INFO - Processing command: install git
+2025-06-19 18:18:11,588 - shree - INFO - Speaking: Installing Git now.
+2025-06-19 18:18:14,676 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/pkgInstaller.sh
+2025-06-19 18:18:14,678 - shree - INFO - Executing: sudo bash /home/danav/Documents/Shree/pkgInstaller.sh install git
+2025-06-19 18:18:57,898 - shree - INFO - Speaking: Git has been installed successfully.
+2025-06-19 18:19:01,931 - shree - INFO - Worker task finished.
+2025-06-19 18:19:09,963 - shree - INFO - Processing command: to ssh key
+2025-06-19 18:19:09,964 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 18:19:16,357 - shree - INFO - Worker task finished.
+2025-06-19 18:19:32,074 - shree - INFO - Processing command: show ssh ki
+2025-06-19 18:19:32,082 - shree - INFO - Speaking: I didn't understand that command. Please try again.
+2025-06-19 18:19:37,296 - shree - INFO - Worker task finished.
+2025-06-19 18:19:42,116 - shree - INFO - Processing command: show ssh key
+2025-06-19 18:19:42,116 - shree - INFO - Executing: chmod +x /home/danav/Documents/Shree/git_utils.sh
+2025-06-19 18:19:42,125 - shree - INFO - Executing: bash /home/danav/Documents/Shree/git_utils.sh display_ssh
+2025-06-19 18:19:47,344 - shree - INFO - Worker task finished.
+2025-06-19 18:19:58,392 - shree - INFO - Could not understand audio
+2025-06-19 18:19:58,393 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-19 18:20:02,267 - shree - INFO - Worker task finished.
+2025-06-19 18:20:08,735 - shree - INFO - Could not understand audio
+2025-06-19 18:20:08,744 - shree - INFO - Speaking: No voice input received or understood.
+2025-06-19 18:20:12,737 - shree - INFO - Worker task finished.
+2025-06-19 18:20:20,613 - shree - INFO - Processing command: exit
+2025-06-19 18:20:20,621 - shree - INFO - Speaking: Goodbye! Have a nice day!
+2025-06-19 18:20:24,198 - shree - INFO - Worker task finished.
